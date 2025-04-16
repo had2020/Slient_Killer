@@ -47,9 +47,8 @@ func _on_next_button_button_down() -> void:
 		5: 
 			$Gui/story/textblob5.visible = false;
 			$Gui/story/textblob6.visible = true;
-		6:
-			$Gui/story/textblob7.visible = false;
-			$Gui/story/textblob8.visible = true;
+			$Gui/story/Next_Button.visible = false;
+			$Gui/Zone_points/Madison.visible = true;
 
 func _on_infection_timer_timeout() -> void:
 	$Timer_to_infect.start();

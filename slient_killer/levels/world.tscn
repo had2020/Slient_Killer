@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=22 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://levels/flash.gd" id="8_wqmfy"]
 [ext_resource type="Texture2D" uid="uid://cpvm2uie7rjwi" path="res://assets/pictures/tap.svg" id="9_687qm"]
 [ext_resource type="Texture2D" uid="uid://c88aqvep6bhev" path="res://assets/pictures/reddot.png" id="10_lmpr0"]
+[ext_resource type="Script" path="res://levels/zone_points.gd" id="11_51hrm"]
 [ext_resource type="Material" uid="uid://ds8shw5pxy34y" path="res://assets/materials/uninfected.tres" id="11_re8x6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w32yo"]
@@ -613,8 +614,10 @@ offset_bottom = 40.0
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("11_51hrm")
 
 [node name="Madison" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 286.0
 offset_top = 539.0
@@ -1432,7 +1435,7 @@ position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="Park2" type="Control" parent="Gui/Zone_points"]
+[node name="Elementary" type="Control" parent="Gui/Zone_points"]
 visible = false
 anchors_preset = 0
 offset_left = 557.0
@@ -1441,7 +1444,7 @@ offset_right = 597.0
 offset_bottom = 850.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zone_points/Park2"]
+[node name="Button" type="Button" parent="Gui/Zone_points/Elementary"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -1451,14 +1454,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/Park2"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/Elementary"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zone_points/Park2"]
+[node name="Label" type="Label" parent="Gui/Zone_points/Elementary"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -1467,7 +1470,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zone_points/Park2"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/Elementary"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -1479,7 +1482,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zone_points/Park2"]
+[node name="cost" type="Label" parent="Gui/Zone_points/Elementary"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -1488,7 +1491,7 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zone_points/Park2/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/Elementary/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
@@ -1691,5 +1694,19 @@ one_shot = true
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
 [connection signal="button_down" from="Gui/story/Next_Button" to="." method="_on_next_button_button_down"]
 [connection signal="timeout" from="Gui/News/EPA_filters/Timer" to="Gui/News/EPA_filters" method="_on_timer_timeout"]
+[connection signal="button_down" from="Gui/Zone_points/Madison/Button" to="Gui/Zone_points" method="madison"]
+[connection signal="button_down" from="Gui/Zone_points/A block/Button" to="Gui/Zone_points" method="A_block"]
+[connection signal="button_down" from="Gui/Zone_points/B block/Button" to="Gui/Zone_points" method="B_block"]
+[connection signal="button_down" from="Gui/Zone_points/C block/Button" to="Gui/Zone_points" method="C_block"]
+[connection signal="button_down" from="Gui/Zone_points/Imiddle/Button" to="Gui/Zone_points" method="Imiddle"]
+[connection signal="button_down" from="Gui/Zone_points/Highway/Button" to="Gui/Zone_points" method="Highway"]
+[connection signal="button_down" from="Gui/Zone_points/Hotel/Button" to="Gui/Zone_points" method="Hotel"]
+[connection signal="button_down" from="Gui/Zone_points/Mall/Button" to="Gui/Zone_points" method="Mall"]
+[connection signal="button_down" from="Gui/Zone_points/D block/Button" to="Gui/Zone_points" method="D_block"]
+[connection signal="button_down" from="Gui/Zone_points/E block/Button" to="Gui/Zone_points" method="E_block"]
+[connection signal="button_down" from="Gui/Zone_points/F Block/Button" to="Gui/Zone_points" method="F_block"]
+[connection signal="button_down" from="Gui/Zone_points/G block/Button" to="Gui/Zone_points" method="G_block"]
+[connection signal="button_down" from="Gui/Zone_points/Park/Button" to="Gui/Zone_points" method="Park"]
+[connection signal="button_down" from="Gui/Zone_points/Elementary/Button" to="Gui/Zone_points" method="Elementary"]
 [connection signal="timeout" from="Infection_Timer" to="." method="_on_infection_timer_timeout"]
 [connection signal="timeout" from="Timer_to_infect" to="." method="_on_timer_to_infect_timeout"]
