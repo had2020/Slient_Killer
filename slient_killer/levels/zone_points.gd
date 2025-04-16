@@ -1,7 +1,19 @@
 extends Control
 
+var uninfected = [];
+
+func _ready() -> void:
+	var child_count = self.get_child_count();
+	for child_number in child_count:
+		uninfected.append(self.get_child(child_number));
+
+func infect(zone: String):
+	match zone:
+		"Madison":
+			print("working");
+
 func madison() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func A_block() -> void:
 	pass # Replace with function body.
