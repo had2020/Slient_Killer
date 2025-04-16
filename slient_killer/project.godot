@@ -11,7 +11,10 @@ config_version=5
 [application]
 
 config/name="Slient_killer"
+run/main_scene="res://levels/world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://assets/pictures/startupmeme.png"
 config/icon="res://icon.svg"
 
 [rendering]
