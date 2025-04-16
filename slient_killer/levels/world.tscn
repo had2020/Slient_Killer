@@ -441,7 +441,6 @@ offset_top = 1.0
 offset_right = 476.0
 offset_bottom = 28.0
 scale = Vector2(40.72, 8.08)
-value = 100.0
 fill_mode = 3
 show_percentage = false
 
@@ -777,7 +776,7 @@ mesh = SubResource("PlaneMesh_lmpr0")
 skeleton = NodePath("../..")
 
 [node name="Highway" type="Node3D" parent="zones"]
-transform = Transform3D(1.12338, 0, -0.211034, 0, 1, 0, 1.76716, 0, 0.134154, 14.2947, 1.69474, -46.3377)
+transform = Transform3D(1.12338, 0, -0.211034, 0, 1, 0, 1.76716, 0, 0.134154, 14.2947, 0.393978, -46.3377)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Highway"]
 transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
