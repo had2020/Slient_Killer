@@ -56,8 +56,10 @@ func _on_infection_timer_timeout() -> void:
 	zone = $Gui/Zone_points.get_child(zone_id);
 	zone.visible = true;
 
-
 func _on_timer_to_infect_timeout() -> void:
 	zone.visible = false;
 	$Infection_Timer.wait_time = randi_range(1, 10)
 	$Infection_Timer.start();
+
+func _on_zone_refill_timeout() -> void:
+	Globals.evo_points += (1 * Globals.infected_zones);

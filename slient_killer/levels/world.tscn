@@ -1498,6 +1498,22 @@ position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
+[node name="ProgressBar" type="ProgressBar" parent="Gui"]
+layout_mode = 0
+offset_top = 1124.0
+offset_right = 648.0
+offset_bottom = 1151.0
+
+[node name="Label" type="Label" parent="Gui"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 237.0
+offset_top = 1087.0
+offset_right = 347.0
+offset_bottom = 1110.0
+scale = Vector2(1.67545, 1.67545)
+text = "Zone earnings"
+
 [node name="zones" type="Node3D" parent="."]
 
 [node name="Madison" type="Node3D" parent="zones"]
@@ -1691,6 +1707,10 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="Zone_refill" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
 [connection signal="button_down" from="Gui/story/Next_Button" to="." method="_on_next_button_button_down"]
 [connection signal="timeout" from="Gui/News/EPA_filters/Timer" to="Gui/News/EPA_filters" method="_on_timer_timeout"]
@@ -1710,3 +1730,4 @@ one_shot = true
 [connection signal="button_down" from="Gui/Zone_points/Elementary/Button" to="Gui/Zone_points" method="Elementary"]
 [connection signal="timeout" from="Infection_Timer" to="." method="_on_infection_timer_timeout"]
 [connection signal="timeout" from="Timer_to_infect" to="." method="_on_timer_to_infect_timeout"]
+[connection signal="timeout" from="Zone_refill" to="." method="_on_zone_refill_timeout"]
