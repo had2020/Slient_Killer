@@ -12,9 +12,11 @@ func infect(zone: String):
 	if Globals.zone_cost < Globals.evo_points:
 		Globals.evo_points -= Globals.zone_cost;
 		Globals.infected_zones += 1;
+		
 		match zone:
 			"Madison":
-				print("working");
+				print("Madison");
+				$"../../zones/Madison/MeshInstance3D".material_overlay("res://assets/materials/infected.tres");
 
 func madison() -> void:
 	infect("Madison");

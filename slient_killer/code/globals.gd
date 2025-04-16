@@ -1,6 +1,6 @@
 extends Node
 
-var zone_cost = 999;
+var zone_cost = 10;
 
 var infected_zones = 0;
 
