@@ -117,6 +117,7 @@ offset_bottom = 160.0
 text = "      "
 
 [node name="story" type="Control" parent="Gui"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -648,6 +649,812 @@ position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
+[node name="A block" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 73.0
+offset_top = 474.0
+offset_right = 113.0
+offset_bottom = 514.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/A block"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/A block"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/A block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/A block"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/A block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/A block/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="B block" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 69.0
+offset_top = 173.0
+offset_right = 109.0
+offset_bottom = 213.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/B block"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/B block"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/B block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/B block"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/B block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/B block/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="C block" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 272.0
+offset_top = 161.0
+offset_right = 312.0
+offset_bottom = 201.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/C block"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/C block"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/C block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/C block"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/C block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/C block/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="Imiddle" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 288.0
+offset_top = 10.0
+offset_right = 328.0
+offset_bottom = 50.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/Imiddle"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Imiddle"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/Imiddle"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/Imiddle"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/Imiddle"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/Imiddle/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="Highway" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 507.0
+offset_top = 232.0
+offset_right = 547.0
+offset_bottom = 272.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/Highway"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Highway"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/Highway"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/Highway"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/Highway"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/Highway/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="Hotel" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 182.0
+offset_top = 254.0
+offset_right = 222.0
+offset_bottom = 294.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/Hotel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Hotel"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/Hotel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/Hotel"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/Hotel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/Hotel/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="Mall" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 304.0
+offset_top = 267.0
+offset_right = 344.0
+offset_bottom = 307.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/Mall"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Mall"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/Mall"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/Mall"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/Mall"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/Mall/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="D block" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 532.0
+offset_top = 474.0
+offset_right = 572.0
+offset_bottom = 514.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/D block"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/D block"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/D block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/D block"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/D block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/D block/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="E block" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 285.0
+offset_top = 684.0
+offset_right = 325.0
+offset_bottom = 724.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/E block"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/E block"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/E block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/E block"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/E block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/E block/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="F Block" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 86.0
+offset_top = 689.0
+offset_right = 126.0
+offset_bottom = 729.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/F Block"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/F Block"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/F Block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/F Block"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/F Block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/F Block/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="G block" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 158.0
+offset_top = 970.0
+offset_right = 198.0
+offset_bottom = 1010.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/G block"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/G block"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/G block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/G block"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/G block"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/G block/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="Park" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 437.0
+offset_top = 754.0
+offset_right = 477.0
+offset_bottom = 794.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/Park"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Park"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/Park"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/Park"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/Park"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/Park/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="Park2" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 557.0
+offset_top = 810.0
+offset_right = 597.0
+offset_bottom = 850.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/Park2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Park2"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/Park2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/Park2"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="cost" type="Label" parent="Gui/Zones/Park2"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Price: 10 Evo"
+
+[node name="Back" type="Sprite2D" parent="Gui/Zones/Park2/cost"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
 [node name="zones" type="Node3D" parent="."]
 
 [node name="Madison" type="Node3D" parent="zones"]
@@ -668,7 +1475,7 @@ mesh = SubResource("PlaneMesh_lmpr0")
 skeleton = NodePath("../..")
 
 [node name="B_Block" type="Node3D" parent="zones"]
-transform = Transform3D(0.788675, 0, 0, 0, 1, 0, 0, 0, 0.785471, -25.9058, 0, -43.207)
+transform = Transform3D(0.788675, 0, 0, 0, 1, 0, 0, 0, 1.0962, -25.9058, 0, -46.4096)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="zones/B_Block"]
 transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
@@ -703,17 +1510,8 @@ material_override = ExtResource("11_re8x6")
 mesh = SubResource("PlaneMesh_lmpr0")
 skeleton = NodePath("../..")
 
-[node name="Academy" type="Node3D" parent="zones"]
-transform = Transform3D(0.487498, 0, 0, 0, 1, 0, 0, 0, 0.481987, -8.02537, 0, 16.0304)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Academy"]
-transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
-material_override = ExtResource("11_re8x6")
-mesh = SubResource("PlaneMesh_lmpr0")
-skeleton = NodePath("../..")
-
 [node name="Park" type="Node3D" parent="zones"]
-transform = Transform3D(0.316959, 0, 0, 0, 1, 0, 0, 0, 0.706521, 15.2259, 0, 25.5922)
+transform = Transform3D(0.316959, 0, 0, 0, 1, 0, 0, 0, 1.14425, 15.2259, 0, 30.4975)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Park"]
 transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
@@ -740,7 +1538,7 @@ mesh = SubResource("PlaneMesh_lmpr0")
 skeleton = NodePath("../..")
 
 [node name="E_Block" type="Node3D" parent="zones"]
-transform = Transform3D(0.542445, 0, 0, 0, 1, 0, 0, 0, 0.964885, -6.98305, 0, 31.9914)
+transform = Transform3D(0.542445, 0, 0, 0, 1, 0, 0, 0, 1.40372, -6.98305, 0, 27.3638)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="zones/E_Block"]
 transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
@@ -752,15 +1550,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(1.71512, 0, 0, 0, 1, 0, 0, 0, 1.49884, -11.8095, 0, 58.5012)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="zones/G_Block"]
-transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
-material_override = ExtResource("11_re8x6")
-mesh = SubResource("PlaneMesh_lmpr0")
-skeleton = NodePath("../..")
-
-[node name="I_Block" type="Node3D" parent="zones"]
-transform = Transform3D(0.275103, 0, 0, 0, 1, 0, 0, 0, 0.383224, 15.7173, 0, 36.8248)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/I_Block"]
 transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
 material_override = ExtResource("11_re8x6")
 mesh = SubResource("PlaneMesh_lmpr0")
@@ -836,12 +1625,8 @@ transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -27
 text = "F Block"
 
 [node name="Label3D11" type="Label3D" parent="Zone_names"]
-transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -3.24761, 3.13014, 36.3108)
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -3.24761, 4.46906, 36.3108)
 text = "E Block"
-
-[node name="Label3D12" type="Label3D" parent="Zone_names"]
-transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, 17.3186, 3.13014, 36.3108)
-text = "I Block"
 
 [node name="Label3D13" type="Label3D" parent="Zone_names"]
 transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, 31.7992, 5.52282, 24.9855)
