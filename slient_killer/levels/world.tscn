@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=21 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjkyr80xipp6o" path="res://assets/pictures/profile.png" id="5_712nc"]
 [ext_resource type="Texture2D" uid="uid://cxxt02snhlfqg" path="res://assets/pictures/DNA.png" id="7_vons5"]
 [ext_resource type="Texture2D" uid="uid://cpfekt6uky80u" path="res://assets/pictures/News/filters.png" id="8_legw5"]
+[ext_resource type="Script" path="res://levels/flash.gd" id="8_wqmfy"]
 [ext_resource type="Texture2D" uid="uid://cpvm2uie7rjwi" path="res://assets/pictures/tap.svg" id="9_687qm"]
 [ext_resource type="Texture2D" uid="uid://c88aqvep6bhev" path="res://assets/pictures/reddot.png" id="10_lmpr0"]
 [ext_resource type="Material" uid="uid://ds8shw5pxy34y" path="res://assets/materials/uninfected.tres" id="11_re8x6"]
@@ -117,7 +118,6 @@ offset_bottom = 160.0
 text = "      "
 
 [node name="story" type="Control" parent="Gui"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -491,6 +491,7 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("8_wqmfy")
 
 [node name="Backdrop" type="Sprite2D" parent="Gui/News/EPA_filters"]
 modulate = Color(0, 0, 0, 1)
@@ -544,6 +545,32 @@ offset_bottom = 474.0
 scale = Vector2(2.44, 2.44)
 text = "-%10"
 
+[node name="Timer" type="Timer" parent="Gui/News/EPA_filters"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="textblob9" type="Label" parent="Gui/News/EPA_filters"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 262.0
+offset_right = 277.0
+offset_bottom = 285.0
+scale = Vector2(2.4, 2.4)
+text = "Oh no bro! My computer froze!"
+
+[node name="backdrop" type="Sprite2D" parent="Gui/News/EPA_filters/textblob9"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/News/EPA_filters/textblob9"]
+position = Vector2(133.5, -47)
+scale = Vector2(0.300003, 0.300003)
+texture = ExtResource("5_712nc")
+
 [node name="Tutorial" type="Control" parent="Gui"]
 anchors_preset = 0
 offset_right = 40.0
@@ -582,12 +609,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Zones" type="Control" parent="Gui"]
+[node name="Zone_points" type="Control" parent="Gui"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Madison" type="Control" parent="Gui/Zones"]
+[node name="Madison" type="Control" parent="Gui/Zone_points"]
 anchors_preset = 0
 offset_left = 286.0
 offset_top = 539.0
@@ -595,7 +622,7 @@ offset_right = 326.0
 offset_bottom = 579.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/Madison"]
+[node name="Button" type="Button" parent="Gui/Zone_points/Madison"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -605,14 +632,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Madison"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/Madison"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/Madison"]
+[node name="Label" type="Label" parent="Gui/Zone_points/Madison"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -621,7 +648,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/Madison"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/Madison"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -633,7 +660,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/Madison"]
+[node name="cost" type="Label" parent="Gui/Zone_points/Madison"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -642,14 +669,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/Madison/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/Madison/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="A block" type="Control" parent="Gui/Zones"]
+[node name="A block" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 73.0
 offset_top = 474.0
@@ -657,7 +685,7 @@ offset_right = 113.0
 offset_bottom = 514.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/A block"]
+[node name="Button" type="Button" parent="Gui/Zone_points/A block"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -667,14 +695,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/A block"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/A block"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/A block"]
+[node name="Label" type="Label" parent="Gui/Zone_points/A block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -683,7 +711,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/A block"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/A block"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -695,7 +723,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/A block"]
+[node name="cost" type="Label" parent="Gui/Zone_points/A block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -704,14 +732,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/A block/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/A block/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="B block" type="Control" parent="Gui/Zones"]
+[node name="B block" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 69.0
 offset_top = 173.0
@@ -719,7 +748,7 @@ offset_right = 109.0
 offset_bottom = 213.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/B block"]
+[node name="Button" type="Button" parent="Gui/Zone_points/B block"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -729,14 +758,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/B block"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/B block"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/B block"]
+[node name="Label" type="Label" parent="Gui/Zone_points/B block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -745,7 +774,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/B block"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/B block"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -757,7 +786,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/B block"]
+[node name="cost" type="Label" parent="Gui/Zone_points/B block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -766,14 +795,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/B block/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/B block/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="C block" type="Control" parent="Gui/Zones"]
+[node name="C block" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 272.0
 offset_top = 161.0
@@ -781,7 +811,7 @@ offset_right = 312.0
 offset_bottom = 201.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/C block"]
+[node name="Button" type="Button" parent="Gui/Zone_points/C block"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -791,14 +821,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/C block"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/C block"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/C block"]
+[node name="Label" type="Label" parent="Gui/Zone_points/C block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -807,7 +837,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/C block"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/C block"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -819,7 +849,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/C block"]
+[node name="cost" type="Label" parent="Gui/Zone_points/C block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -828,14 +858,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/C block/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/C block/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="Imiddle" type="Control" parent="Gui/Zones"]
+[node name="Imiddle" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 288.0
 offset_top = 10.0
@@ -843,7 +874,7 @@ offset_right = 328.0
 offset_bottom = 50.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/Imiddle"]
+[node name="Button" type="Button" parent="Gui/Zone_points/Imiddle"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -853,14 +884,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Imiddle"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/Imiddle"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/Imiddle"]
+[node name="Label" type="Label" parent="Gui/Zone_points/Imiddle"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -869,7 +900,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/Imiddle"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/Imiddle"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -881,7 +912,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/Imiddle"]
+[node name="cost" type="Label" parent="Gui/Zone_points/Imiddle"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -890,14 +921,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/Imiddle/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/Imiddle/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="Highway" type="Control" parent="Gui/Zones"]
+[node name="Highway" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 507.0
 offset_top = 232.0
@@ -905,7 +937,7 @@ offset_right = 547.0
 offset_bottom = 272.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/Highway"]
+[node name="Button" type="Button" parent="Gui/Zone_points/Highway"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -915,14 +947,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Highway"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/Highway"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/Highway"]
+[node name="Label" type="Label" parent="Gui/Zone_points/Highway"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -931,7 +963,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/Highway"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/Highway"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -943,7 +975,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/Highway"]
+[node name="cost" type="Label" parent="Gui/Zone_points/Highway"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -952,14 +984,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/Highway/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/Highway/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="Hotel" type="Control" parent="Gui/Zones"]
+[node name="Hotel" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 182.0
 offset_top = 254.0
@@ -967,7 +1000,7 @@ offset_right = 222.0
 offset_bottom = 294.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/Hotel"]
+[node name="Button" type="Button" parent="Gui/Zone_points/Hotel"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -977,14 +1010,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Hotel"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/Hotel"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/Hotel"]
+[node name="Label" type="Label" parent="Gui/Zone_points/Hotel"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -993,7 +1026,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/Hotel"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/Hotel"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -1005,7 +1038,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/Hotel"]
+[node name="cost" type="Label" parent="Gui/Zone_points/Hotel"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -1014,14 +1047,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/Hotel/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/Hotel/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="Mall" type="Control" parent="Gui/Zones"]
+[node name="Mall" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 304.0
 offset_top = 267.0
@@ -1029,7 +1063,7 @@ offset_right = 344.0
 offset_bottom = 307.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/Mall"]
+[node name="Button" type="Button" parent="Gui/Zone_points/Mall"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -1039,14 +1073,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Mall"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/Mall"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/Mall"]
+[node name="Label" type="Label" parent="Gui/Zone_points/Mall"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -1055,7 +1089,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/Mall"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/Mall"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -1067,7 +1101,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/Mall"]
+[node name="cost" type="Label" parent="Gui/Zone_points/Mall"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -1076,14 +1110,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/Mall/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/Mall/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="D block" type="Control" parent="Gui/Zones"]
+[node name="D block" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 532.0
 offset_top = 474.0
@@ -1091,7 +1126,7 @@ offset_right = 572.0
 offset_bottom = 514.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/D block"]
+[node name="Button" type="Button" parent="Gui/Zone_points/D block"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -1101,14 +1136,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/D block"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/D block"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/D block"]
+[node name="Label" type="Label" parent="Gui/Zone_points/D block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -1117,7 +1152,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/D block"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/D block"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -1129,7 +1164,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/D block"]
+[node name="cost" type="Label" parent="Gui/Zone_points/D block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -1138,14 +1173,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/D block/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/D block/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="E block" type="Control" parent="Gui/Zones"]
+[node name="E block" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 285.0
 offset_top = 684.0
@@ -1153,7 +1189,7 @@ offset_right = 325.0
 offset_bottom = 724.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/E block"]
+[node name="Button" type="Button" parent="Gui/Zone_points/E block"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -1163,14 +1199,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/E block"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/E block"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/E block"]
+[node name="Label" type="Label" parent="Gui/Zone_points/E block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -1179,7 +1215,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/E block"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/E block"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -1191,7 +1227,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/E block"]
+[node name="cost" type="Label" parent="Gui/Zone_points/E block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -1200,14 +1236,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/E block/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/E block/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="F Block" type="Control" parent="Gui/Zones"]
+[node name="F Block" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 86.0
 offset_top = 689.0
@@ -1215,7 +1252,7 @@ offset_right = 126.0
 offset_bottom = 729.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/F Block"]
+[node name="Button" type="Button" parent="Gui/Zone_points/F Block"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -1225,14 +1262,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/F Block"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/F Block"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/F Block"]
+[node name="Label" type="Label" parent="Gui/Zone_points/F Block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -1241,7 +1278,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/F Block"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/F Block"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -1253,7 +1290,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/F Block"]
+[node name="cost" type="Label" parent="Gui/Zone_points/F Block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -1262,14 +1299,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/F Block/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/F Block/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="G block" type="Control" parent="Gui/Zones"]
+[node name="G block" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 158.0
 offset_top = 970.0
@@ -1277,7 +1315,7 @@ offset_right = 198.0
 offset_bottom = 1010.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/G block"]
+[node name="Button" type="Button" parent="Gui/Zone_points/G block"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -1287,14 +1325,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/G block"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/G block"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/G block"]
+[node name="Label" type="Label" parent="Gui/Zone_points/G block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -1303,7 +1341,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/G block"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/G block"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -1315,7 +1353,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/G block"]
+[node name="cost" type="Label" parent="Gui/Zone_points/G block"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -1324,14 +1362,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/G block/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/G block/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="Park" type="Control" parent="Gui/Zones"]
+[node name="Park" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 437.0
 offset_top = 754.0
@@ -1339,7 +1378,7 @@ offset_right = 477.0
 offset_bottom = 794.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/Park"]
+[node name="Button" type="Button" parent="Gui/Zone_points/Park"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -1349,14 +1388,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Park"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/Park"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/Park"]
+[node name="Label" type="Label" parent="Gui/Zone_points/Park"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -1365,7 +1404,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/Park"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/Park"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -1377,7 +1416,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/Park"]
+[node name="cost" type="Label" parent="Gui/Zone_points/Park"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -1386,14 +1425,15 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/Park/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/Park/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
-[node name="Park2" type="Control" parent="Gui/Zones"]
+[node name="Park2" type="Control" parent="Gui/Zone_points"]
+visible = false
 anchors_preset = 0
 offset_left = 557.0
 offset_top = 810.0
@@ -1401,7 +1441,7 @@ offset_right = 597.0
 offset_bottom = 850.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/Park2"]
+[node name="Button" type="Button" parent="Gui/Zone_points/Park2"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -1411,14 +1451,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Park2"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zone_points/Park2"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/Park2"]
+[node name="Label" type="Label" parent="Gui/Zone_points/Park2"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -1427,7 +1467,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/Park2"]
+[node name="Label2" type="Label" parent="Gui/Zone_points/Park2"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -1439,7 +1479,7 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="cost" type="Label" parent="Gui/Zones/Park2"]
+[node name="cost" type="Label" parent="Gui/Zone_points/Park2"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
@@ -1448,7 +1488,7 @@ offset_right = 78.0
 offset_bottom = 26.0
 text = "Price: 10 Evo"
 
-[node name="Back" type="Sprite2D" parent="Gui/Zones/Park2/cost"]
+[node name="Back" type="Sprite2D" parent="Gui/Zone_points/Park2/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
@@ -1640,4 +1680,16 @@ text = "OG Park"
 transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -0.247825, 3.13014, 53.4336)
 text = "G Block"
 
+[node name="Infection_Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="Timer_to_infect" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
+[connection signal="button_down" from="Gui/story/Next_Button" to="." method="_on_next_button_button_down"]
+[connection signal="timeout" from="Gui/News/EPA_filters/Timer" to="Gui/News/EPA_filters" method="_on_timer_timeout"]
+[connection signal="timeout" from="Infection_Timer" to="." method="_on_infection_timer_timeout"]
+[connection signal="timeout" from="Timer_to_infect" to="." method="_on_timer_to_infect_timeout"]
