@@ -4,6 +4,9 @@ var evo_points = 0;
 var current_story_progress = 0;
 var zone;
 
+var check_for_evo = false;
+var check_to_evo = 0;
+
 func _process(delta: float) -> void:
 	pass
 
@@ -13,6 +16,10 @@ func _input(event: InputEvent) -> void:
 			evo_points += 1;
 			$Gui/Evo_points/ProgressBar.value = evo_points;
 			$Gui/Evo_points/Counter.text = str(evo_points);
+		if check_for_evo:
+			if check_to_evo == evo_points:
+				check_for_evo = false;
+				$Gui/story/Next_Button.visible = true;
 
 func _on_next_button_button_down() -> void:
 	# progressing story
@@ -32,6 +39,17 @@ func _on_next_button_button_down() -> void:
 			$Gui/story/textblob3.visible = false;
 			$Gui/story/textblob4.visible = true;
 			$Gui/story/Next_Button.visible = false;
+			check_for_evo = true;
+			check_to_evo = evo_points + 10;
+		4:
+			$Gui/story/textblob4.visible = false;
+			$Gui/story/textblob5.visible = true;
+		5: 
+			$Gui/story/textblob5.visible = false;
+			$Gui/story/textblob6.visible = true;
+		6:
+			$Gui/story/textblob7.visible = false;
+			$Gui/story/textblob8.visible = true;
 
 func _on_infection_timer_timeout() -> void:
 	$Timer_to_infect.start();

@@ -244,7 +244,7 @@ offset_top = 262.0
 offset_right = 277.0
 offset_bottom = 285.0
 scale = Vector2(2.4, 2.4)
-text = "Step one: let's get some Evo "
+text = "Step one: let's get more Evo "
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob4"]
 modulate = Color(0, 0, 0, 1)
@@ -265,7 +265,7 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "Points by tapping on the screen."
+text = "Tap till you get 10 more points."
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob4/extra"]
 modulate = Color(0, 0, 0, 1)
@@ -341,7 +341,7 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "points. Use your points to infect."
+text = "rates. Use points infect Madison."
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob6/extra"]
 modulate = Color(0, 0, 0, 1)
