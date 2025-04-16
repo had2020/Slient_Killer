@@ -16,7 +16,8 @@ func infect(zone: String):
 		match zone:
 			"Madison":
 				print("Madison");
-				$"../../zones/Madison/MeshInstance3D".material_overlay("res://assets/materials/infected.tres");
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/Madison/MeshInstance3D".material_override = infected_material;
 
 func madison() -> void:
 	infect("Madison");
