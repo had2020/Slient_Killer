@@ -1507,11 +1507,11 @@ offset_bottom = 1151.0
 [node name="Label" type="Label" parent="Gui"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 237.0
-offset_top = 1087.0
-offset_right = 347.0
-offset_bottom = 1110.0
-scale = Vector2(1.67545, 1.67545)
+offset_left = 218.0
+offset_top = 1075.0
+offset_right = 328.0
+offset_bottom = 1098.0
+scale = Vector2(1.99545, 1.99545)
 text = "Zone earnings"
 
 [node name="zones" type="Node3D" parent="."]

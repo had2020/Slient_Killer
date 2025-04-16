@@ -18,45 +18,46 @@ func infect(zone: String):
 				print("Madison");
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/Madison/MeshInstance3D".material_override = infected_material;
+				$Madison.visible = false;
 
 func madison() -> void:
 	infect("Madison");
 
 func A_block() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func B_block() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func C_block() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func Imiddle() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func Highway() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func Hotel() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func Mall() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func D_block() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func E_block() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func F_block() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func G_block() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func Park() -> void:
-	pass # Replace with function body.
+	infect("Madison");
 
 func Elementary() -> void:
-	pass # Replace with function body.
+	infect("Madison");
