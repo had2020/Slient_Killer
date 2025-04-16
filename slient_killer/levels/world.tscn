@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=20 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cxxt02snhlfqg" path="res://assets/pictures/DNA.png" id="7_vons5"]
 [ext_resource type="Texture2D" uid="uid://cpfekt6uky80u" path="res://assets/pictures/News/filters.png" id="8_legw5"]
 [ext_resource type="Texture2D" uid="uid://cpvm2uie7rjwi" path="res://assets/pictures/tap.svg" id="9_687qm"]
+[ext_resource type="Texture2D" uid="uid://c88aqvep6bhev" path="res://assets/pictures/reddot.png" id="10_lmpr0"]
+[ext_resource type="Material" uid="uid://ds8shw5pxy34y" path="res://assets/materials/uninfected.tres" id="11_re8x6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w32yo"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -39,6 +41,8 @@ script/source = "extends AudioStreamPlayer
 func _on_finished() -> void:
 	self.play()
 "
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lmpr0"]
 
 [node name="World" type="Node3D"]
 transform = Transform3D(0.999402, 0, 0, 0, 0.999402, 0, 0, 0, 0.999402, 0, 0, 0)
@@ -118,7 +122,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="textblob" type="Label" parent="Gui/story"]
-visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = 18.0
@@ -255,6 +258,7 @@ scale = Vector2(0.300003, 0.300003)
 texture = ExtResource("5_712nc")
 
 [node name="extra" type="Label" parent="Gui/story/textblob4"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -292,6 +296,7 @@ scale = Vector2(0.300003, 0.300003)
 texture = ExtResource("5_712nc")
 
 [node name="extra" type="Label" parent="Gui/story/textblob5"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -329,6 +334,7 @@ scale = Vector2(0.300003, 0.300003)
 texture = ExtResource("5_712nc")
 
 [node name="extra" type="Label" parent="Gui/story/textblob6"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -366,6 +372,7 @@ scale = Vector2(0.300003, 0.300003)
 texture = ExtResource("5_712nc")
 
 [node name="extra" type="Label" parent="Gui/story/textblob7"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -574,5 +581,226 @@ texture = ExtResource("4_712nc")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Zones" type="Control" parent="Gui"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Football" type="Control" parent="Gui/Zones"]
+anchors_preset = 0
+offset_left = 286.0
+offset_top = 575.0
+offset_right = 326.0
+offset_bottom = 615.0
+scale = Vector2(1.03512, 1.03512)
+
+[node name="Button" type="Button" parent="Gui/Zones/Football"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -1.0
+offset_top = 24.0
+offset_right = 52.0
+offset_bottom = 55.0
+scale = Vector2(1, 1.72)
+text = "    "
+
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Football"]
+z_index = -2
+texture_filter = 1
+position = Vector2(26, 50)
+scale = Vector2(0.168407, 0.168407)
+texture = ExtResource("10_lmpr0")
+
+[node name="Label" type="Label" parent="Gui/Zones/Football"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 38.0
+offset_right = 48.0
+offset_bottom = 61.0
+text = "Infect"
+
+[node name="Label2" type="Label" parent="Gui/Zones/Football"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 46.0
+offset_bottom = 58.0
+scale = Vector2(1.12, 1.24)
+text = "Infect"
+
+[node name="name" type="Label" parent="Gui/Zones/Football"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -23.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 26.0
+text = "Madison HS"
+
+[node name="Icon" type="Sprite2D" parent="Gui/Zones/Football/name"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(50, 10)
+scale = Vector2(0.784563, 0.161049)
+texture = ExtResource("4_712nc")
+
+[node name="zones" type="Node3D" parent="."]
+
+[node name="Madison" type="Node3D" parent="zones"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Madison"]
+transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="A_Block" type="Node3D" parent="zones"]
+transform = Transform3D(0.711023, 0, 0, 0, 1, 0, 0, 0, 1.17751, -26.9788, 0, -5.33801)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/A_Block"]
+transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="B_Block" type="Node3D" parent="zones"]
+transform = Transform3D(0.788675, 0, 0, 0, 1, 0, 0, 0, 0.785471, -25.9058, 0, -43.207)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/B_Block"]
+transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="T_Block" type="Node3D" parent="zones"]
+transform = Transform3D(0.816465, 0, 0, 0, 1, 0, 0, 0, 0.299296, -26.9903, 0, -65.8468)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/T_Block"]
+transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="C_Block" type="Node3D" parent="zones"]
+transform = Transform3D(0.734203, 0, 0, 0, 1, 0, 0, 0, 0.514072, -2.16979, 0, -41.5758)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/C_Block"]
+transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="Hotel" type="Node3D" parent="zones"]
+transform = Transform3D(0.340663, 0, 0, 0, 1, 0, 0, 0, 0.250655, -11.2732, 0, -27.5766)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Hotel"]
+transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="Mall" type="Node3D" parent="zones"]
+transform = Transform3D(0.340663, 0, 0, 0, 1, 0, 0, 0, 0.250655, -0.732972, 0, -27.5898)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Mall"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="Academy" type="Node3D" parent="zones"]
+transform = Transform3D(0.487498, 0, 0, 0, 1, 0, 0, 0, 0.481987, -8.02537, 0, 16.0304)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Academy"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="Park" type="Node3D" parent="zones"]
+transform = Transform3D(0.316959, 0, 0, 0, 1, 0, 0, 0, 0.706521, 15.2259, 0, 25.5922)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Park"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="D_Block" type="Node3D" parent="zones"]
+transform = Transform3D(0.550214, 0, 0, 0, 1, 0, 0, 0, 1.67496, 24.1376, 0, 1.80615)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/D_Block"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="F_Block" type="Node3D" parent="zones"]
+transform = Transform3D(0.495357, 0, 0, 0, 1, 0, 0, 0, 1.64568, -31.7949, 0, 26.0858)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/F_Block"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="E_Block" type="Node3D" parent="zones"]
+transform = Transform3D(0.542445, 0, 0, 0, 1, 0, 0, 0, 0.964885, -6.98305, 0, 31.9914)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/E_Block"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="G_Block" type="Node3D" parent="zones"]
+transform = Transform3D(1.71512, 0, 0, 0, 1, 0, 0, 0, 1.49884, -11.8095, 0, 58.5012)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/G_Block"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="I_Block" type="Node3D" parent="zones"]
+transform = Transform3D(0.275103, 0, 0, 0, 1, 0, 0, 0, 0.383224, 15.7173, 0, 36.8248)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/I_Block"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="Highway" type="Node3D" parent="zones"]
+transform = Transform3D(1.12338, 0, -0.211034, 0, 1, 0, 1.76716, 0, 0.134154, 14.2947, 1.69474, -46.3377)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Highway"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="Elementary" type="Node3D" parent="zones"]
+transform = Transform3D(0.306165, 0, 0, 0, 1, 0, 0, 0, 1.08673, 30.8586, 0, 30.1637)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Elementary"]
+transform = Transform3D(23.5564, 0, 0, 0, 1, 0, 0, 0, 10.2225, 6.85148, 0, -1.40767)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
+
+[node name="Imiddle" type="Node3D" parent="zones"]
+transform = Transform3D(0.571329, 0, 0, 0, 1, 0, 0, 0, 0.435568, -5.18623, 0, -58.9458)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/Imiddle"]
+transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
+material_override = ExtResource("11_re8x6")
+mesh = SubResource("PlaneMesh_lmpr0")
+skeleton = NodePath("../..")
 
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
