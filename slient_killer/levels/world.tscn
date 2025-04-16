@@ -586,15 +586,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Football" type="Control" parent="Gui/Zones"]
+[node name="Madison" type="Control" parent="Gui/Zones"]
 anchors_preset = 0
 offset_left = 286.0
-offset_top = 575.0
+offset_top = 539.0
 offset_right = 326.0
-offset_bottom = 615.0
+offset_bottom = 579.0
 scale = Vector2(1.03512, 1.03512)
 
-[node name="Button" type="Button" parent="Gui/Zones/Football"]
+[node name="Button" type="Button" parent="Gui/Zones/Madison"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -1.0
@@ -604,14 +604,14 @@ offset_bottom = 55.0
 scale = Vector2(1, 1.72)
 text = "    "
 
-[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Football"]
+[node name="Reddot" type="Sprite2D" parent="Gui/Zones/Madison"]
 z_index = -2
 texture_filter = 1
 position = Vector2(26, 50)
 scale = Vector2(0.168407, 0.168407)
 texture = ExtResource("10_lmpr0")
 
-[node name="Label" type="Label" parent="Gui/Zones/Football"]
+[node name="Label" type="Label" parent="Gui/Zones/Madison"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
@@ -620,7 +620,7 @@ offset_right = 48.0
 offset_bottom = 61.0
 text = "Infect"
 
-[node name="Label2" type="Label" parent="Gui/Zones/Football"]
+[node name="Label2" type="Label" parent="Gui/Zones/Madison"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 texture_filter = 1
@@ -632,16 +632,16 @@ offset_bottom = 58.0
 scale = Vector2(1.12, 1.24)
 text = "Infect"
 
-[node name="name" type="Label" parent="Gui/Zones/Football"]
+[node name="cost" type="Label" parent="Gui/Zones/Madison"]
 texture_filter = 1
 layout_mode = 0
 offset_left = -23.0
 offset_top = 3.0
 offset_right = 78.0
 offset_bottom = 26.0
-text = "Madison HS"
+text = "Price: 10 Evo"
 
-[node name="Icon" type="Sprite2D" parent="Gui/Zones/Football/name"]
+[node name="Back" type="Sprite2D" parent="Gui/Zones/Madison/cost"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(50, 10)
@@ -671,15 +671,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.788675, 0, 0, 0, 1, 0, 0, 0, 0.785471, -25.9058, 0, -43.207)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="zones/B_Block"]
-transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
-material_override = ExtResource("11_re8x6")
-mesh = SubResource("PlaneMesh_lmpr0")
-skeleton = NodePath("../..")
-
-[node name="T_Block" type="Node3D" parent="zones"]
-transform = Transform3D(0.816465, 0, 0, 0, 1, 0, 0, 0, 0.299296, -26.9903, 0, -65.8468)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="zones/T_Block"]
 transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.88265)
 material_override = ExtResource("11_re8x6")
 mesh = SubResource("PlaneMesh_lmpr0")
@@ -801,5 +792,67 @@ transform = Transform3D(14.8932, 0, 0, 0, 1, 0, 0, 0, 16.9149, -1.65443, 0, -6.8
 material_override = ExtResource("11_re8x6")
 mesh = SubResource("PlaneMesh_lmpr0")
 skeleton = NodePath("../..")
+
+[node name="Zone_names" type="Node3D" parent="."]
+
+[node name="Label3D" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74228e-07, 20, 0, -20, -8.74228e-07, 0, 0, 6.87263)
+text = "Madison HS"
+
+[node name="Label3D2" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74228e-07, 20, 0, -20, -8.74228e-07, 26.6101, 2.43245, 13.8261)
+text = "D Block"
+
+[node name="Label3D3" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74228e-07, 20, 0, -20, -8.74228e-07, 1.55949, 2.43245, -27.2059)
+text = "Mall"
+
+[node name="Label3D4" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74228e-07, 20, 0, -20, -8.74228e-07, -11.4493, 2.43245, -28.4125)
+text = "Hotel"
+
+[node name="Label3D5" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74228e-07, 20, 0, -20, -8.74228e-07, -27.4375, 2.43245, 3.48906)
+text = "A Block"
+
+[node name="Label3D6" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74228e-07, 20, 0, -20, -8.74228e-07, 22.4057, 2.43245, -29.7481)
+text = "Highway"
+
+[node name="Label3D7" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -28.0237, 2.43245, -38.0266)
+text = "B Block"
+
+[node name="Label3D8" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -2.99404, 2.43245, -39.1557)
+text = "C Block"
+
+[node name="Label3D9" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -6.16228, 2.43245, -56.0056)
+text = "Imiddle"
+
+[node name="Label3D10" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -27.4961, 7.92678, 32.8165)
+text = "F Block"
+
+[node name="Label3D11" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -3.24761, 3.13014, 36.3108)
+text = "E Block"
+
+[node name="Label3D12" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, 17.3186, 3.13014, 36.3108)
+text = "I Block"
+
+[node name="Label3D13" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, 31.7992, 5.52282, 24.9855)
+text = "Elementray"
+
+[node name="Label3D14" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, 17.2736, 3.13014, 19.4431)
+text = "OG Park"
+
+[node name="Label3D15" type="Label3D" parent="Zone_names"]
+transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -0.247825, 3.13014, 53.4336)
+text = "G Block"
 
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
