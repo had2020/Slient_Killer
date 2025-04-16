@@ -1,16 +1,20 @@
 extends Control
 
-var uninfected = [];
 
-func _ready() -> void:
-	var child_count = self.get_child_count();
-	for child_number in child_count:
-		uninfected.append(self.get_child(child_number));
+#var uninfected = [];
+
+#func _ready() -> void:
+	#var child_count = self.get_child_count();
+	#for child_number in child_count:
+		#uninfected.append(self.get_child(child_number));
 
 func infect(zone: String):
-	match zone:
-		"Madison":
-			print("working");
+	if Globals.zone_cost < Globals.evo_points:
+		Globals.evo_points -= Globals.zone_cost;
+		Globals.infected_zones += 1;
+		match zone:
+			"Madison":
+				print("working");
 
 func madison() -> void:
 	infect("Madison");
