@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=41 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://ccdhovkc64p4e" path="res://assets/pictures/basketball.png" id="21_kfjr1"]
 [ext_resource type="Texture2D" uid="uid://nfc06vrpj1hh" path="res://assets/pictures/dragon.png" id="21_ox7aa"]
 [ext_resource type="AudioStream" uid="uid://cb5s26pjb0f8o" path="res://assets/Sounds/news.mp3" id="26_rspcm"]
+[ext_resource type="Script" path="res://code/testing.gd" id="27_ap2km"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w32yo"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -67,6 +68,11 @@ func _on_finished() -> void:
 [node name="World" type="Node3D"]
 transform = Transform3D(0.999402, 0, 0, 0, 0.999402, 0, 0, 0, 0.999402, 0, 0, 0)
 script = ExtResource("1_i8ckm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.0
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i8ckm")
@@ -612,7 +618,7 @@ scale = Vector2(2.44, 2.44)
 text = "-%10"
 
 [node name="Timer" type="Timer" parent="Gui/News/EPA_filters"]
-wait_time = 2.0
+wait_time = 3.5
 one_shot = true
 
 [node name="textblob9" type="Label" parent="Gui/News/EPA_filters"]
@@ -2757,6 +2763,15 @@ self_modulate = Color(0.439216, 0, 0, 1)
 z_index = -1
 position = Vector2(9.99304, -128.716)
 texture = ExtResource("12_yfe8t")
+
+[node name="Panel" type="Panel" parent="Gui"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 350.0
+offset_right = 360.0
+offset_bottom = 532.0
+scale = Vector2(1.50357, 1.50357)
+script = ExtResource("27_ap2km")
 
 [node name="zones" type="Node3D" parent="."]
 

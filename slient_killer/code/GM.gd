@@ -85,7 +85,7 @@ func _on_next_button_button_down() -> void:
 			$Gui/story.visible = false;
 			$EPA_timer.start()
 
-# TODO game over and clear_messages() beforehand
+# TODO game over and clear_messages() beforehand, transfer user to gameover scene 
 func _on_infection_timer_timeout() -> void:
 	$Timer_to_infect.start();
 	var children = $Gui/Zone_points.get_child_count();

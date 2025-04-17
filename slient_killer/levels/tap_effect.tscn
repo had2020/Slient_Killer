@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dw06agq2vfml3"]
 
 [ext_resource type="Script" path="res://code/tap_effect.gd" id="1_fqul6"]
-[ext_resource type="Texture2D" uid="uid://d1bim5x8kow4f" path="res://assets/pictures/tap.png" id="2_rxwae"]
+[ext_resource type="Texture2D" uid="uid://d743d55apqy8" path="res://assets/pictures/circle.png" id="2_tw1oc"]
 
 [node name="Tap_effect" type="Control"]
 layout_mode = 3
@@ -19,7 +19,8 @@ one_shot = true
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_rxwae")
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_tw1oc")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
