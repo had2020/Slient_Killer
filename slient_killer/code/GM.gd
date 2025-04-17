@@ -13,14 +13,18 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Tap"):
+		
+		
 		if Globals.evo_points != 100:
 			Globals.evo_points += 1;
 			$Gui/Evo_points/ProgressBar.value = Globals.evo_points;
 			$Gui/Evo_points/Counter.text = str(Globals.evo_points);
+			
 		if check_for_evo:
 			if check_to_evo == Globals.evo_points:
 				check_for_evo = false;
 				$Gui/story/Next_Button.visible = true;
+				
 		if Globals.evo_points == 100 and not played_cap:
 			played_cap = true;
 			$cap_alert.start();
@@ -29,6 +33,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_next_button_button_down() -> void:
 	$Sound_effects/submit.play();
+	
 	# progressing story
 	current_story_progress += 1;
 	

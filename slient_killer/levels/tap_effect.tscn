@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw06agq2vfml3"]
+
+[ext_resource type="Script" path="res://code/tap_effect.gd" id="1_fqul6"]
+[ext_resource type="Texture2D" uid="uid://d1bim5x8kow4f" path="res://assets/pictures/tap.png" id="2_rxwae"]
+
+[node name="Tap_effect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqul6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rxwae")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
