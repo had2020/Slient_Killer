@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=30 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://igy71wjwsvq" path="res://assets/pictures/box.png" id="12_yfe8t"]
 [ext_resource type="Script" path="res://levels/item.gd" id="13_h5spq"]
 [ext_resource type="Texture2D" uid="uid://b0dwb7m3k7g6h" path="res://assets/pictures/virusdish.png" id="13_tu8ou"]
+[ext_resource type="AudioStream" uid="uid://dpcq0wdeb3hx5" path="res://assets/Sounds/error.mp3" id="14_yr8u6"]
 [ext_resource type="AudioStream" uid="uid://cnbqirmy786ye" path="res://assets/Sounds/cough.mp3" id="15_54i5j"]
 [ext_resource type="AudioStream" uid="uid://belt2yh6jvpjh" path="res://assets/Sounds/cinehit.mp3" id="16_wrd2w"]
 [ext_resource type="AudioStream" uid="uid://uhrj4ppq4y4q" path="res://assets/Sounds/submit.mp3" id="17_og45p"]
@@ -704,6 +705,7 @@ offset_top = 342.0
 offset_right = 81.0
 offset_bottom = 382.0
 script = ExtResource("13_h5spq")
+cost = 10
 
 [node name="Name" type="Label" parent="Gui/Evolution_window/Shop_items/item"]
 layout_mode = 0
@@ -747,10 +749,35 @@ text = "Buy: 5 points"
 [node name="Cing" type="AudioStreamPlayer" parent="Gui/Evolution_window/Shop_items/item"]
 stream = ExtResource("8_oxfhy")
 
+[node name="Error" type="AudioStreamPlayer" parent="Gui/Evolution_window/Shop_items/item"]
+stream = ExtResource("14_yr8u6")
+
 [node name="Virusdish" type="Sprite2D" parent="Gui/Evolution_window/Shop_items/item"]
 position = Vector2(62, 70)
 scale = Vector2(0.200001, 0.200001)
 texture = ExtResource("13_tu8ou")
+
+[node name="error_msg" type="Label" parent="Gui/Evolution_window/Shop_items/item"]
+visible = false
+modulate = Color(1, 0, 0, 1)
+z_index = 2
+layout_mode = 0
+offset_left = 11.0
+offset_top = 64.0
+offset_right = 115.0
+offset_bottom = 87.0
+text = "You're broke!"
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Evolution_window/Shop_items/item/error_msg"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(51, 13)
+scale = Vector2(0.873545, 0.193545)
+texture = ExtResource("4_712nc")
+
+[node name="Error_timer" type="Timer" parent="Gui/Evolution_window/Shop_items/item"]
+wait_time = 2.0
+one_shot = true
 
 [node name="Zone_points" type="Control" parent="Gui"]
 anchors_preset = 0
@@ -1873,6 +1900,8 @@ one_shot = true
 [connection signal="button_down" from="Gui/story/Next_Button" to="." method="_on_next_button_button_down"]
 [connection signal="timeout" from="Gui/Evo_points/Bonus/Timer" to="." method="_on_timer_timeout_bonus"]
 [connection signal="timeout" from="Gui/News/EPA_filters/Timer" to="Gui/News/EPA_filters" method="_on_timer_timeout"]
+[connection signal="button_down" from="Gui/Evolution_window/Shop_items/item/Button" to="Gui/Evolution_window/Shop_items/item" method="_on_button_button_down"]
+[connection signal="timeout" from="Gui/Evolution_window/Shop_items/item/Error_timer" to="Gui/Evolution_window/Shop_items/item" method="_on_error_timer_timeout"]
 [connection signal="button_down" from="Gui/Zone_points/Madison/Button" to="Gui/Zone_points" method="madison"]
 [connection signal="button_down" from="Gui/Zone_points/A block/Button" to="Gui/Zone_points" method="A_block"]
 [connection signal="button_down" from="Gui/Zone_points/B block/Button" to="Gui/Zone_points" method="B_block"]
