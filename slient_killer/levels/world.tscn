@@ -674,8 +674,9 @@ text = "(10)"
 [node name="Evolution_window" type="Control" parent="Gui"]
 visible = false
 anchors_preset = 0
+offset_top = 15.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 55.0
 script = ExtResource("12_gyyqq")
 
 [node name="Backdrop" type="Sprite2D" parent="Gui/Evolution_window"]
@@ -1670,22 +1671,6 @@ z_index = -1
 position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
-
-[node name="ProgressBar" type="ProgressBar" parent="Gui"]
-layout_mode = 0
-offset_top = 1124.0
-offset_right = 648.0
-offset_bottom = 1151.0
-
-[node name="Label" type="Label" parent="Gui"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 218.0
-offset_top = 1075.0
-offset_right = 328.0
-offset_bottom = 1098.0
-scale = Vector2(1.99545, 1.99545)
-text = "Zone earnings"
 
 [node name="zones" type="Node3D" parent="."]
 

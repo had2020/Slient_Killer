@@ -8,6 +8,10 @@ var check_to_evo = 0;
 
 var played_cap = false;
 
+func _physics_process(delta: float) -> void:
+	if Globals.sigma	:
+		$Gui/story/Next_Button.visible = true;
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Tap"):
 		
@@ -41,8 +45,6 @@ func _on_next_button_button_down() -> void:
 	
 	# step handling
 	match current_story_progress:
-		8:
-			$Infection_Timer.start()
 		1:
 			$Gui/story/textblob.visible = false;
 			$Gui/story/textblob2.visible = true;
@@ -65,6 +67,18 @@ func _on_next_button_button_down() -> void:
 			$Gui/story/textblob6.visible = true;
 			$Gui/story/Next_Button.visible = false;
 			$Gui/Zone_points/Madison.visible = true;
+		6:
+			$Gui/story/textblob6.visible = false;
+			$Gui/story/textblob7.visible = true;
+			$Gui/story/Next_Button.visible = false;
+		7:
+			$Gui/story/textblob7.visible = false;
+			$Gui/story/textblob8.visible = true;
+		8:
+			$Infection_Timer.start()
+			$Gui/story/textblob8.visible = false;
+			$Gui/story/Next_Button.visible = false;
+			$Gui/story.visible = false;
 
 func _on_infection_timer_timeout() -> void:
 	$Timer_to_infect.start();
