@@ -88,31 +88,31 @@ func C_block() -> void:
 	infect("C_Block");
 
 func Imiddle() -> void:
-	infect("Hotel");
+	infect("Imiddle");
 
 func Highway() -> void:
-	infect("Mall");
+	infect("Highway");
 
 func Hotel() -> void:
-	infect("Park");
+	infect("Hotel");
 
 func Mall() -> void:
-	infect("D_Block");
+	infect("Mall");
 
 func D_block() -> void:
-	infect("F_Block");
+	infect("D_Block");
 
 func E_block() -> void:
 	infect("E_Block");
 
 func F_block() -> void:
-	infect("G_Block");
+	infect("F_Block");
 
 func G_block() -> void:
-	infect("Highway");
+	infect("G_Block");
 
 func Park() -> void:
-	infect("Elementary");
+	infect("Park");
 
 func Elementary() -> void:
-	infect("Imiddle");
+	infect("Elementary");

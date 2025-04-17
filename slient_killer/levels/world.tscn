@@ -1871,7 +1871,7 @@ autostart = true
 
 [node name="Cough_effect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_54i5j")
-volume_db = 2.0
+volume_db = 4.0
 
 [node name="Sound_effects" type="Node3D" parent="."]
 
