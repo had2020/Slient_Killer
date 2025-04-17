@@ -16,6 +16,7 @@ func _on_button_button_down() -> void:
 			$Button.text = "Brought";
 			$Button.set_modulate(Color(1, 255, 1, 1));
 			Globals.sigma = true;
+			self.get_parent().get_parent().visible = false;
 		else:
 			$error_msg.visible = true;
 			$Error.play();

@@ -21,46 +21,98 @@ func infect(zone: String):
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/Madison/MeshInstance3D".material_override = infected_material;
 				$Madison.visible = false;
+			"A_Block":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/A_Block/MeshInstance3D".material_override = infected_material;
+				$"A block".visible = false;
+			"B_Block":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/B_Block/MeshInstance3D".material_override = infected_material;
+				$"B block".visible = false;
+			"C_Block":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/C_Block/MeshInstance3D".material_override = infected_material;
+				$"C block".visible = false;
+			"Hotel":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/Hotel/MeshInstance3D".material_override = infected_material;
+				$"Hotel".visible = false;
+			"Mall":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/Mall/MeshInstance3D".material_override = infected_material;
+				$"Mall".visible = false;
+			"Park":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/Park/MeshInstance3D".material_override = infected_material;
+				$"Park".visible = false;
+			"D_Block":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/D_Block/MeshInstance3D".material_override = infected_material;
+				$"D block".visible = false;
+			"F_Block":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/F_Block/MeshInstance3D".material_override = infected_material;
+				$"F block".visible = false;
+			"E_Block":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/E_Block/MeshInstance3D".material_override = infected_material;
+				$"E block".visible = false;
+			"G_Block":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/G_Block/MeshInstance3D".material_override = infected_material;
+				$"G block".visible = false;
+			"Highway":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/Highway/MeshInstance3D".material_override = infected_material;
+				$"Highway".visible = false;
+			"Elementary":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/Elementary/MeshInstance3D".material_override = infected_material;
+				$"Elementary".visible = false;
+			"Imiddle":
+				var infected_material = preload("res://assets/materials/infected.tres");
+				$"../../zones/Imiddle/MeshInstance3D".material_override = infected_material;
+				$"Imiddle".visible = false;
 
 func madison() -> void:
 	infect("Madison");
-	$"../story/Next_Button".visible = true;
+	$"../story/Next_Button".visible = true; 
 
 func A_block() -> void:
-	infect("Madison");
+	infect("A_Block");
 
 func B_block() -> void:
-	infect("Madison");
+	infect("B_Block");
 
 func C_block() -> void:
-	infect("Madison");
+	infect("C_Block");
 
 func Imiddle() -> void:
-	infect("Madison");
+	infect("Hotel");
 
 func Highway() -> void:
-	infect("Madison");
+	infect("Mall");
 
 func Hotel() -> void:
-	infect("Madison");
+	infect("Park");
 
 func Mall() -> void:
-	infect("Madison");
+	infect("D_Block");
 
 func D_block() -> void:
-	infect("Madison");
+	infect("F_Block");
 
 func E_block() -> void:
-	infect("Madison");
+	infect("E_Block");
 
 func F_block() -> void:
-	infect("Madison");
+	infect("G_Block");
 
 func G_block() -> void:
-	infect("Madison");
+	infect("Highway");
 
 func Park() -> void:
-	infect("Madison");
+	infect("Elementary");
 
 func Elementary() -> void:
-	infect("Madison");
+	infect("Imiddle");
