@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=29 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://c88aqvep6bhev" path="res://assets/pictures/reddot.png" id="10_lmpr0"]
 [ext_resource type="Script" path="res://levels/zone_points.gd" id="11_51hrm"]
 [ext_resource type="Material" uid="uid://ds8shw5pxy34y" path="res://assets/materials/uninfected.tres" id="11_re8x6"]
+[ext_resource type="Texture2D" uid="uid://igy71wjwsvq" path="res://assets/pictures/box.png" id="12_yfe8t"]
+[ext_resource type="Script" path="res://levels/item.gd" id="13_h5spq"]
+[ext_resource type="Texture2D" uid="uid://b0dwb7m3k7g6h" path="res://assets/pictures/virusdish.png" id="13_tu8ou"]
 [ext_resource type="AudioStream" uid="uid://cnbqirmy786ye" path="res://assets/Sounds/cough.mp3" id="15_54i5j"]
 [ext_resource type="AudioStream" uid="uid://belt2yh6jvpjh" path="res://assets/Sounds/cinehit.mp3" id="16_wrd2w"]
 [ext_resource type="AudioStream" uid="uid://uhrj4ppq4y4q" path="res://assets/Sounds/submit.mp3" id="17_og45p"]
@@ -668,6 +671,86 @@ text = "(10)"
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Evolution_window"]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+position = Vector2(324, 521)
+scale = Vector2(1.33871, 0.840561)
+texture = ExtResource("12_yfe8t")
+
+[node name="Button" type="Button" parent="Gui/Evolution_window"]
+modulate = Color(0.330252, 0.693176, 3.85046e-07, 1)
+z_index = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = 560.0
+offset_top = 331.0
+offset_right = 578.0
+offset_bottom = 362.0
+scale = Vector2(3.52001, 3.52001)
+text = "X"
+icon_alignment = 1
+
+[node name="Shop_items" type="Control" parent="Gui/Evolution_window"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="item" type="Control" parent="Gui/Evolution_window/Shop_items"]
+anchors_preset = 0
+offset_left = 41.0
+offset_top = 342.0
+offset_right = 81.0
+offset_bottom = 382.0
+script = ExtResource("13_h5spq")
+
+[node name="Name" type="Label" parent="Gui/Evolution_window/Shop_items/item"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 2.0
+offset_right = 117.0
+offset_bottom = 25.0
+text = "Sigma Protein"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Evolution_window/Shop_items/item"]
+modulate = Color(0.114897, 0.114897, 0.114897, 1)
+z_index = -1
+position = Vector2(62, 83)
+scale = Vector2(0.28, 0.35)
+texture = ExtResource("12_yfe8t")
+
+[node name="buttonback" type="Sprite2D" parent="Gui/Evolution_window/Shop_items/item"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(62, 145)
+scale = Vector2(0.25, 0.05)
+texture = ExtResource("12_yfe8t")
+
+[node name="Label" type="Label" parent="Gui/Evolution_window/Shop_items/item"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 114.0
+offset_right = 161.0
+offset_bottom = 137.0
+scale = Vector2(0.720001, 0.720001)
+text = "%10 faster infection"
+
+[node name="Button" type="Button" parent="Gui/Evolution_window/Shop_items/item"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 128.0
+offset_right = 117.0
+offset_bottom = 159.0
+text = "Buy: 5 points"
+
+[node name="Cing" type="AudioStreamPlayer" parent="Gui/Evolution_window/Shop_items/item"]
+stream = ExtResource("8_oxfhy")
+
+[node name="Virusdish" type="Sprite2D" parent="Gui/Evolution_window/Shop_items/item"]
+position = Vector2(62, 70)
+scale = Vector2(0.200001, 0.200001)
+texture = ExtResource("13_tu8ou")
 
 [node name="Zone_points" type="Control" parent="Gui"]
 anchors_preset = 0
