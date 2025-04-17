@@ -7,6 +7,10 @@ extends Control
 	#var child_count = self.get_child_count();
 	#for child_number in child_count:
 		#uninfected.append(self.get_child(child_number));
+		
+func clear_messages():
+	for child in $"../Messages".get_children():
+		child.visible = false
 
 func infect(zone: String):
 	$"../../Cough_effect".play(2.3)
@@ -26,6 +30,9 @@ func infect(zone: String):
 				$"../../zones/A_Block/MeshInstance3D".material_override = infected_material;
 				$"A block".queue_free()
 			"B_Block":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/friend".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/B_Block/MeshInstance3D".material_override = infected_material;
 				$"B block".queue_free()
@@ -42,6 +49,9 @@ func infect(zone: String):
 				$"../../zones/Mall/MeshInstance3D".material_override = infected_material;
 				$"Mall".queue_free()
 			"Park":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/park".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/Park/MeshInstance3D".material_override = infected_material;
 				$"Park".queue_free()
@@ -62,14 +72,23 @@ func infect(zone: String):
 				$"../../zones/G_Block/MeshInstance3D".material_override = infected_material;
 				$"G block".queue_free()
 			"Highway":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/Closed".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/Highway/MeshInstance3D".material_override = infected_material;
 				$"Highway".queue_free()
 			"Elementary":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/otherschools".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/Elementary/MeshInstance3D".material_override = infected_material;
 				$"Elementary".queue_free()
 			"Imiddle":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/otherschools".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/Imiddle/MeshInstance3D".material_override = infected_material;
 				$"Imiddle".queue_free()

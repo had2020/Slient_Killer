@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=35 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cxxt02snhlfqg" path="res://assets/pictures/DNA.png" id="7_vons5"]
 [ext_resource type="Texture2D" uid="uid://cpfekt6uky80u" path="res://assets/pictures/News/filters.png" id="8_legw5"]
 [ext_resource type="AudioStream" uid="uid://rauu5jakbphf" path="res://assets/Sounds/cing_sound.mp3" id="8_oxfhy"]
+[ext_resource type="Script" path="res://levels/story.gd" id="8_qa5eu"]
 [ext_resource type="Script" path="res://levels/flash.gd" id="8_wqmfy"]
 [ext_resource type="Texture2D" uid="uid://cpvm2uie7rjwi" path="res://assets/pictures/tap.svg" id="9_687qm"]
 [ext_resource type="Texture2D" uid="uid://c88aqvep6bhev" path="res://assets/pictures/reddot.png" id="10_lmpr0"]
@@ -23,6 +24,8 @@
 [ext_resource type="AudioStream" uid="uid://cnbqirmy786ye" path="res://assets/Sounds/cough.mp3" id="15_54i5j"]
 [ext_resource type="AudioStream" uid="uid://belt2yh6jvpjh" path="res://assets/Sounds/cinehit.mp3" id="16_wrd2w"]
 [ext_resource type="AudioStream" uid="uid://uhrj4ppq4y4q" path="res://assets/Sounds/submit.mp3" id="17_og45p"]
+[ext_resource type="Script" path="res://levels/otherschools.gd" id="21_ch027"]
+[ext_resource type="AudioStream" uid="uid://cb5s26pjb0f8o" path="res://assets/Sounds/news.mp3" id="26_rspcm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w32yo"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -130,9 +133,11 @@ offset_bottom = 160.0
 text = "      "
 
 [node name="story" type="Control" parent="Gui"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("8_qa5eu")
 
 [node name="textblob" type="Label" parent="Gui/story"]
 texture_filter = 1
@@ -1682,6 +1687,450 @@ position = Vector2(50, 10)
 scale = Vector2(0.784563, 0.161049)
 texture = ExtResource("4_712nc")
 
+[node name="Messages" type="Control" parent="Gui"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="otherschools" type="Label" parent="Gui/Messages"]
+visible = false
+texture_filter = 1
+offset_left = 18.0
+offset_top = 265.0
+offset_right = 274.0
+offset_bottom = 288.0
+scale = Vector2(2.4, 2.4)
+text = "Bro, think of the kids!"
+script = ExtResource("21_ch027")
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/otherschools"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/Messages/otherschools"]
+position = Vector2(133.5, -47)
+scale = Vector2(0.300003, 0.300003)
+texture = ExtResource("5_712nc")
+
+[node name="Button" type="Button" parent="Gui/Messages/otherschools"]
+layout_mode = 0
+offset_left = 109.167
+offset_top = 222.083
+offset_right = 139.167
+offset_bottom = 253.083
+scale = Vector2(1.38333, 1.38333)
+text = "Ok"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Messages/otherschools/Button"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(15, 16.6667)
+scale = Vector2(0.254044, 0.229275)
+texture = ExtResource("4_712nc")
+
+[node name="park" type="Label" parent="Gui/Messages"]
+visible = false
+texture_filter = 1
+offset_left = 18.0
+offset_top = 265.0
+offset_right = 274.0
+offset_bottom = 288.0
+scale = Vector2(2.4, 2.4)
+text = "Dam, even Football is cancelled!"
+script = ExtResource("21_ch027")
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/park"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/Messages/park"]
+position = Vector2(133.5, -47)
+scale = Vector2(0.300003, 0.300003)
+texture = ExtResource("5_712nc")
+
+[node name="Button" type="Button" parent="Gui/Messages/park"]
+layout_mode = 0
+offset_left = 109.167
+offset_top = 222.083
+offset_right = 139.167
+offset_bottom = 253.083
+scale = Vector2(1.38333, 1.38333)
+text = "Ok"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Messages/park/Button"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(15, 16.6667)
+scale = Vector2(0.254044, 0.229275)
+texture = ExtResource("4_712nc")
+
+[node name="friend" type="Label" parent="Gui/Messages"]
+visible = false
+texture_filter = 1
+offset_left = 18.0
+offset_top = 265.0
+offset_right = 274.0
+offset_bottom = 288.0
+scale = Vector2(2.4, 2.4)
+text = "A friend of mine just got sick..."
+script = ExtResource("21_ch027")
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/friend"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/Messages/friend"]
+position = Vector2(133.5, -47)
+scale = Vector2(0.300003, 0.300003)
+texture = ExtResource("5_712nc")
+
+[node name="Button" type="Button" parent="Gui/Messages/friend"]
+layout_mode = 0
+offset_left = 109.167
+offset_top = 222.083
+offset_right = 139.167
+offset_bottom = 253.083
+scale = Vector2(1.38333, 1.38333)
+text = "Ok"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Messages/friend/Button"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(15, 16.6667)
+scale = Vector2(0.254044, 0.229275)
+texture = ExtResource("4_712nc")
+
+[node name="Closed" type="Label" parent="Gui/Messages"]
+visible = false
+texture_filter = 1
+offset_left = 18.0
+offset_top = 265.0
+offset_right = 274.0
+offset_bottom = 288.0
+scale = Vector2(2.4, 2.4)
+text = "Oh no bro, San Diego just issued"
+script = ExtResource("21_ch027")
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/Closed"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/Messages/Closed"]
+position = Vector2(133.5, -47)
+scale = Vector2(0.300003, 0.300003)
+texture = ExtResource("5_712nc")
+
+[node name="Button" type="Button" parent="Gui/Messages/Closed"]
+layout_mode = 0
+offset_left = 109.167
+offset_top = 222.083
+offset_right = 139.167
+offset_bottom = 253.083
+scale = Vector2(1.38333, 1.38333)
+text = "Ok"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Messages/Closed/Button"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(15, 16.6667)
+scale = Vector2(0.254044, 0.229275)
+texture = ExtResource("4_712nc")
+
+[node name="extra" type="Label" parent="Gui/Messages/Closed"]
+offset_left = 0.416667
+offset_top = 19.5834
+offset_right = 256.417
+offset_bottom = 42.5834
+scale = Vector2(0.999995, 0.999995)
+text = "a lockdown, cus of you!"
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/Closed/extra"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="alot" type="Label" parent="Gui/Messages"]
+visible = false
+texture_filter = 1
+offset_left = 18.0
+offset_top = 265.0
+offset_right = 274.0
+offset_bottom = 288.0
+scale = Vector2(2.4, 2.4)
+text = "Oh, yes my goon! That was alot"
+script = ExtResource("21_ch027")
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/alot"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/Messages/alot"]
+position = Vector2(133.5, -47)
+scale = Vector2(0.300003, 0.300003)
+texture = ExtResource("5_712nc")
+
+[node name="Button" type="Button" parent="Gui/Messages/alot"]
+layout_mode = 0
+offset_left = 109.167
+offset_top = 222.083
+offset_right = 139.167
+offset_bottom = 253.083
+scale = Vector2(1.38333, 1.38333)
+text = "Ok"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Messages/alot/Button"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(15, 16.6667)
+scale = Vector2(0.254044, 0.229275)
+texture = ExtResource("4_712nc")
+
+[node name="extra" type="Label" parent="Gui/Messages/alot"]
+offset_left = 0.416667
+offset_top = 19.5834
+offset_right = 256.417
+offset_bottom = 42.5834
+scale = Vector2(0.999995, 0.999995)
+text = "of people to infect. "
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/alot/extra"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="extra2" type="Label" parent="Gui/Messages/alot"]
+offset_left = 0.416667
+offset_top = 40.8333
+offset_right = 256.417
+offset_bottom = 63.8333
+scale = Vector2(0.999995, 0.999995)
+text = "My Plan will be ready soon hehe."
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/alot/extra2"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="mall" type="Label" parent="Gui/Messages"]
+visible = false
+texture_filter = 1
+offset_left = 18.0
+offset_top = 265.0
+offset_right = 274.0
+offset_bottom = 288.0
+scale = Vector2(2.4, 2.4)
+text = "Do you mind if you, wait for me"
+script = ExtResource("21_ch027")
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/mall"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/Messages/mall"]
+position = Vector2(133.5, -47)
+scale = Vector2(0.300003, 0.300003)
+texture = ExtResource("5_712nc")
+
+[node name="Button" type="Button" parent="Gui/Messages/mall"]
+layout_mode = 0
+offset_left = 109.167
+offset_top = 222.083
+offset_right = 139.167
+offset_bottom = 253.083
+scale = Vector2(1.38333, 1.38333)
+text = "Ok"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Messages/mall/Button"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(15, 16.6667)
+scale = Vector2(0.254044, 0.229275)
+texture = ExtResource("4_712nc")
+
+[node name="extra" type="Label" parent="Gui/Messages/mall"]
+offset_left = 0.416667
+offset_top = 19.5834
+offset_right = 256.417
+offset_bottom = 42.5834
+scale = Vector2(0.999995, 0.999995)
+text = "to get a extra long meat ball "
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/mall/extra"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="extra2" type="Label" parent="Gui/Messages/mall"]
+offset_left = 0.416667
+offset_top = 40.8333
+offset_right = 256.417
+offset_bottom = 63.8333
+scale = Vector2(0.999995, 0.999995)
+text = "subway first!"
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/mall/extra2"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="hotel" type="Label" parent="Gui/Messages"]
+visible = false
+texture_filter = 1
+offset_left = 18.0
+offset_top = 265.0
+offset_right = 274.0
+offset_bottom = 288.0
+scale = Vector2(2.4, 2.4)
+text = "Yeah, hotels are just giant"
+script = ExtResource("21_ch027")
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/hotel"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/Messages/hotel"]
+position = Vector2(133.5, -47)
+scale = Vector2(0.300003, 0.300003)
+texture = ExtResource("5_712nc")
+
+[node name="Button" type="Button" parent="Gui/Messages/hotel"]
+layout_mode = 0
+offset_left = 109.167
+offset_top = 222.083
+offset_right = 139.167
+offset_bottom = 253.083
+scale = Vector2(1.38333, 1.38333)
+text = "Ok"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Messages/hotel/Button"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(15, 16.6667)
+scale = Vector2(0.254044, 0.229275)
+texture = ExtResource("4_712nc")
+
+[node name="extra" type="Label" parent="Gui/Messages/hotel"]
+offset_left = 0.416667
+offset_top = 19.5834
+offset_right = 256.417
+offset_bottom = 42.5834
+scale = Vector2(0.999995, 0.999995)
+text = "tourist traps anyway!"
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/hotel/extra"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="A_block" type="Label" parent="Gui/Messages"]
+visible = false
+texture_filter = 1
+offset_left = 18.0
+offset_top = 265.0
+offset_right = 274.0
+offset_bottom = 288.0
+scale = Vector2(2.4, 2.4)
+text = "Aww man, that block was low key"
+script = ExtResource("21_ch027")
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/A_block"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/Messages/A_block"]
+position = Vector2(133.5, -47)
+scale = Vector2(0.300003, 0.300003)
+texture = ExtResource("5_712nc")
+
+[node name="Button" type="Button" parent="Gui/Messages/A_block"]
+layout_mode = 0
+offset_left = 109.167
+offset_top = 222.083
+offset_right = 139.167
+offset_bottom = 253.083
+scale = Vector2(1.38333, 1.38333)
+text = "Ok"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Messages/A_block/Button"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(15, 16.6667)
+scale = Vector2(0.254044, 0.229275)
+texture = ExtResource("4_712nc")
+
+[node name="extra" type="Label" parent="Gui/Messages/A_block"]
+offset_left = 0.416667
+offset_top = 19.5834
+offset_right = 256.417
+offset_bottom = 42.5834
+scale = Vector2(0.999995, 0.999995)
+text = "kind of fire, not goin lie."
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/A_block/extra"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="broke_alert" type="Label" parent="Gui"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 495.0
+offset_right = 221.0
+offset_bottom = 518.0
+scale = Vector2(3.24, 3.24)
+text = "Oh no bro, your broke!"
+
+[node name="Box" type="Sprite2D" parent="Gui/broke_alert"]
+self_modulate = Color(1, 0, 0, 1)
+z_index = -1
+position = Vector2(88.2716, 11.7284)
+scale = Vector2(0.401514, -0.0407634)
+texture = ExtResource("12_yfe8t")
+
+[node name="Box2" type="Sprite2D" parent="Gui/broke_alert/Box"]
+self_modulate = Color(0.439216, 0, 0, 1)
+z_index = -1
+position = Vector2(9.99304, -128.716)
+texture = ExtResource("12_yfe8t")
+
 [node name="zones" type="Node3D" parent="."]
 
 [node name="Madison" type="Node3D" parent="zones"]
@@ -1891,6 +2340,9 @@ stream = ExtResource("16_wrd2w")
 [node name="submit" type="AudioStreamPlayer" parent="Sound_effects"]
 stream = ExtResource("17_og45p")
 
+[node name="News" type="AudioStreamPlayer" parent="Sound_effects"]
+stream = ExtResource("26_rspcm")
+
 [node name="cap_alert" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -1917,6 +2369,14 @@ one_shot = true
 [connection signal="button_down" from="Gui/Zone_points/G block/Button" to="Gui/Zone_points" method="G_block"]
 [connection signal="button_down" from="Gui/Zone_points/Park/Button" to="Gui/Zone_points" method="Park"]
 [connection signal="button_down" from="Gui/Zone_points/Elementary/Button" to="Gui/Zone_points" method="Elementary"]
+[connection signal="button_down" from="Gui/Messages/otherschools/Button" to="Gui/Messages/otherschools" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/Messages/park/Button" to="Gui/Messages/park" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/Messages/friend/Button" to="Gui/Messages/friend" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/Messages/Closed/Button" to="Gui/Messages/Closed" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/Messages/alot/Button" to="Gui/Messages/alot" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/Messages/mall/Button" to="Gui/Messages/mall" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/Messages/hotel/Button" to="Gui/Messages/hotel" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/Messages/A_block/Button" to="Gui/Messages/A_block" method="_on_button_button_down"]
 [connection signal="timeout" from="Infection_Timer" to="." method="_on_infection_timer_timeout"]
 [connection signal="timeout" from="Timer_to_infect" to="." method="_on_timer_to_infect_timeout"]
 [connection signal="timeout" from="Zone_refill" to="." method="_on_zone_refill_timeout"]
