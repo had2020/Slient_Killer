@@ -83,6 +83,7 @@ func _on_next_button_button_down() -> void:
 			$Gui/story/textblob8.visible = false;
 			$Gui/story/Next_Button.visible = false;
 			$Gui/story.visible = false;
+			$EPA_timer.start()
 
 # TODO game over and clear_messages() beforehand
 func _on_infection_timer_timeout() -> void:
@@ -114,3 +115,8 @@ func _on_timer_timeout_bonus() -> void:
 func _on_cap_alert_timeout() -> void:
 	played_cap = false;
 	$Gui/Evo_points/Cap_label.visible = false;
+
+func _on_epa_timer_timeout() -> void:
+	$Gui/News/EPA_filters.visible = true;
+	$Sound_effects/News.play()
+	$Gui/News/EPA_filters/Timer.start()

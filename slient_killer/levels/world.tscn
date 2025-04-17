@@ -607,9 +607,8 @@ scale = Vector2(2.44, 2.44)
 text = "-%10"
 
 [node name="Timer" type="Timer" parent="Gui/News/EPA_filters"]
-wait_time = 5.0
+wait_time = 2.0
 one_shot = true
-autostart = true
 
 [node name="textblob9" type="Label" parent="Gui/News/EPA_filters"]
 layout_mode = 0
@@ -2456,6 +2455,10 @@ stream = ExtResource("26_rspcm")
 wait_time = 3.0
 one_shot = true
 
+[node name="EPA_timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
 [connection signal="button_down" from="Gui/Evo_button/Evo_Button" to="Gui/Evo_button" method="_on_evo_button_button_down"]
 [connection signal="button_down" from="Gui/story/Next_Button" to="." method="_on_next_button_button_down"]
@@ -2492,3 +2495,4 @@ one_shot = true
 [connection signal="timeout" from="Timer_to_infect" to="." method="_on_timer_to_infect_timeout"]
 [connection signal="timeout" from="Zone_refill" to="." method="_on_zone_refill_timeout"]
 [connection signal="timeout" from="cap_alert" to="." method="_on_cap_alert_timeout"]
+[connection signal="timeout" from="EPA_timer" to="." method="_on_epa_timer_timeout"]
