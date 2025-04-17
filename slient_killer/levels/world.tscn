@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=32 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bv1dl1thp0ysj" path="res://icon.svg" id="4_712nc"]
 [ext_resource type="AudioStream" uid="uid://b1scgevbxub0t" path="res://assets/soundtrack/ Chicken Jerky.mp3" id="4_w32yo"]
 [ext_resource type="Texture2D" uid="uid://bjkyr80xipp6o" path="res://assets/pictures/profile.png" id="5_712nc"]
+[ext_resource type="Script" path="res://code/evo_button.gd" id="5_an2ju"]
 [ext_resource type="Texture2D" uid="uid://cxxt02snhlfqg" path="res://assets/pictures/DNA.png" id="7_vons5"]
 [ext_resource type="Texture2D" uid="uid://cpfekt6uky80u" path="res://assets/pictures/News/filters.png" id="8_legw5"]
 [ext_resource type="AudioStream" uid="uid://rauu5jakbphf" path="res://assets/Sounds/cing_sound.mp3" id="8_oxfhy"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c88aqvep6bhev" path="res://assets/pictures/reddot.png" id="10_lmpr0"]
 [ext_resource type="Script" path="res://levels/zone_points.gd" id="11_51hrm"]
 [ext_resource type="Material" uid="uid://ds8shw5pxy34y" path="res://assets/materials/uninfected.tres" id="11_re8x6"]
+[ext_resource type="Script" path="res://code/evolution_window.gd" id="12_gyyqq"]
 [ext_resource type="Texture2D" uid="uid://igy71wjwsvq" path="res://assets/pictures/box.png" id="12_yfe8t"]
 [ext_resource type="Script" path="res://levels/item.gd" id="13_h5spq"]
 [ext_resource type="Texture2D" uid="uid://b0dwb7m3k7g6h" path="res://assets/pictures/virusdish.png" id="13_tu8ou"]
@@ -97,6 +99,7 @@ offset_bottom = 40.0
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("5_an2ju")
 
 [node name="DNA" type="Sprite2D" parent="Gui/Evo_button"]
 position = Vector2(78, 64)
@@ -669,9 +672,11 @@ scale = Vector2(1.53502, 1.53502)
 text = "(10)"
 
 [node name="Evolution_window" type="Control" parent="Gui"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("12_gyyqq")
 
 [node name="Backdrop" type="Sprite2D" parent="Gui/Evolution_window"]
 modulate = Color(0, 0, 0, 1)
@@ -705,7 +710,7 @@ offset_top = 342.0
 offset_right = 81.0
 offset_bottom = 382.0
 script = ExtResource("13_h5spq")
-cost = 10
+cost = 5
 
 [node name="Name" type="Label" parent="Gui/Evolution_window/Shop_items/item"]
 layout_mode = 0
@@ -744,7 +749,7 @@ offset_left = 9.0
 offset_top = 128.0
 offset_right = 117.0
 offset_bottom = 159.0
-text = "Buy: 5 points"
+text = "Buy: 0 points"
 
 [node name="Cing" type="AudioStreamPlayer" parent="Gui/Evolution_window/Shop_items/item"]
 stream = ExtResource("8_oxfhy")
@@ -776,7 +781,6 @@ scale = Vector2(0.873545, 0.193545)
 texture = ExtResource("4_712nc")
 
 [node name="Error_timer" type="Timer" parent="Gui/Evolution_window/Shop_items/item"]
-wait_time = 2.0
 one_shot = true
 
 [node name="Zone_points" type="Control" parent="Gui"]
@@ -1897,9 +1901,11 @@ wait_time = 3.0
 one_shot = true
 
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
+[connection signal="button_down" from="Gui/Evo_button/Evo_Button" to="Gui/Evo_button" method="_on_evo_button_button_down"]
 [connection signal="button_down" from="Gui/story/Next_Button" to="." method="_on_next_button_button_down"]
 [connection signal="timeout" from="Gui/Evo_points/Bonus/Timer" to="." method="_on_timer_timeout_bonus"]
 [connection signal="timeout" from="Gui/News/EPA_filters/Timer" to="Gui/News/EPA_filters" method="_on_timer_timeout"]
+[connection signal="button_down" from="Gui/Evolution_window/Button" to="Gui/Evolution_window" method="_on_button_button_down"]
 [connection signal="button_down" from="Gui/Evolution_window/Shop_items/item/Button" to="Gui/Evolution_window/Shop_items/item" method="_on_button_button_down"]
 [connection signal="timeout" from="Gui/Evolution_window/Shop_items/item/Error_timer" to="Gui/Evolution_window/Shop_items/item" method="_on_error_timer_timeout"]
 [connection signal="button_down" from="Gui/Zone_points/Madison/Button" to="Gui/Zone_points" method="madison"]
