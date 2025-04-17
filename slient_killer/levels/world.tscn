@@ -321,7 +321,7 @@ offset_top = 262.0
 offset_right = 277.0
 offset_bottom = 285.0
 scale = Vector2(2.4, 2.4)
-text = "We must infect to increase our"
+text = "Infect Madison so we can auto"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob6"]
 modulate = Color(0, 0, 0, 1)
@@ -342,7 +342,7 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "rates. Use points infect Madison."
+text = "generate our Evo Points"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob6/extra"]
 modulate = Color(0, 0, 0, 1)

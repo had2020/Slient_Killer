@@ -12,6 +12,8 @@ func infect(zone: String):
 	if Globals.zone_cost < Globals.evo_points:
 		Globals.evo_points -= Globals.zone_cost;
 		Globals.infected_zones += 1;
+		$"../Evo_points/ProgressBar".value = Globals.evo_points;
+		$"../Evo_points/Counter".text = str(Globals.evo_points);
 		
 		match zone:
 			"Madison":
@@ -22,6 +24,7 @@ func infect(zone: String):
 
 func madison() -> void:
 	infect("Madison");
+	$"../story/Next_Button".visible = true;
 
 func A_block() -> void:
 	infect("Madison");
