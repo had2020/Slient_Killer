@@ -9,6 +9,7 @@ extends Control
 		#uninfected.append(self.get_child(child_number));
 
 func infect(zone: String):
+	$"../../Cough_effect".play(2.3)
 	if Globals.zone_cost < Globals.evo_points:
 		Globals.evo_points -= Globals.zone_cost;
 		Globals.infected_zones += 1;
@@ -17,7 +18,6 @@ func infect(zone: String):
 		
 		match zone:
 			"Madison":
-				print("Madison");
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/Madison/MeshInstance3D".material_override = infected_material;
 				$Madison.visible = false;

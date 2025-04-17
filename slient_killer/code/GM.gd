@@ -6,6 +6,8 @@ var zone;
 var check_for_evo = false;
 var check_to_evo = 0;
 
+var played_cap = false;
+
 func _process(delta: float) -> void:
 	pass
 
@@ -19,6 +21,11 @@ func _input(event: InputEvent) -> void:
 			if check_to_evo == Globals.evo_points:
 				check_for_evo = false;
 				$Gui/story/Next_Button.visible = true;
+		if Globals.evo_points == 100:
+			played_cap = true;
+			$cap_alert.start();
+			$Sound_effects/alert.play();
+			
 
 func _on_next_button_button_down() -> void:
 	# progressing story
@@ -63,5 +70,12 @@ func _on_timer_to_infect_timeout() -> void:
 
 func _on_zone_refill_timeout() -> void:
 	Globals.evo_points += (1 * Globals.infected_zones);
-	$Gui/Evo_points/ProgressBar.value = Globals.evo_points;
-	$Gui/Evo_points/Counter.text = str(Globals.evo_points);
+	if Globals.infected_zones > 0:
+		$Gui/Evo_points/ProgressBar.value = Globals.evo_points;
+		$Gui/Evo_points/Counter.text = str(Globals.evo_points);
+		$Gui/Evo_points/Bonus.visible = true;
+		$Gui/Evo_points/Bonus/Timer.start();
+		$Gui/Evo_points/Cing_sound.play();
+
+func _on_timer_timeout_bonus() -> void:
+	$Gui/Evo_points/Bonus.visible = false;

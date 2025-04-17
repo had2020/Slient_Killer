@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=25 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://c88aqvep6bhev" path="res://assets/pictures/reddot.png" id="10_lmpr0"]
 [ext_resource type="Script" path="res://levels/zone_points.gd" id="11_51hrm"]
 [ext_resource type="Material" uid="uid://ds8shw5pxy34y" path="res://assets/materials/uninfected.tres" id="11_re8x6"]
+[ext_resource type="AudioStream" uid="uid://cnbqirmy786ye" path="res://assets/Sounds/cough.mp3" id="15_54i5j"]
+[ext_resource type="AudioStream" uid="uid://belt2yh6jvpjh" path="res://assets/Sounds/cinehit.mp3" id="16_wrd2w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w32yo"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -343,7 +345,7 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "generate our Evo Points"
+text = "generate some Evo Points"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob6/extra"]
 modulate = Color(0, 0, 0, 1)
@@ -489,6 +491,7 @@ scale = Vector2(2.56001, 2.56001)
 text = "Evo"
 
 [node name="Bonus" type="Label" parent="Gui/Evo_points"]
+visible = false
 modulate = Color(0, 1, 0, 1)
 z_index = 1
 texture_filter = 1
@@ -500,9 +503,24 @@ offset_bottom = 90.0
 scale = Vector2(2.12002, 2.12002)
 text = "+Bonus"
 
+[node name="Timer" type="Timer" parent="Gui/Evo_points/Bonus"]
+wait_time = 2.0
+one_shot = true
+
 [node name="Cing_sound" type="AudioStreamPlayer" parent="Gui/Evo_points"]
 stream = ExtResource("8_oxfhy")
 volume_db = 3.0
+
+[node name="Cap_label" type="Label" parent="Gui/Evo_points"]
+visible = false
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 498.0
+offset_top = 206.0
+offset_right = 557.0
+offset_bottom = 229.0
+scale = Vector2(1.89609, 1.89609)
+text = "Capped"
 
 [node name="News" type="Control" parent="Gui"]
 anchors_preset = 0
@@ -1730,13 +1748,25 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Zone_refill" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 10.0
 autostart = true
 
 [node name="Cough_effect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_54i5j")
+volume_db = 2.0
+
+[node name="Sound_effects" type="Node3D" parent="."]
+
+[node name="alert" type="AudioStreamPlayer" parent="Sound_effects"]
+stream = ExtResource("16_wrd2w")
+
+[node name="cap_alert" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
 [connection signal="button_down" from="Gui/story/Next_Button" to="." method="_on_next_button_button_down"]
+[connection signal="timeout" from="Gui/Evo_points/Bonus/Timer" to="." method="_on_timer_timeout_bonus"]
 [connection signal="timeout" from="Gui/News/EPA_filters/Timer" to="Gui/News/EPA_filters" method="_on_timer_timeout"]
 [connection signal="button_down" from="Gui/Zone_points/Madison/Button" to="Gui/Zone_points" method="madison"]
 [connection signal="button_down" from="Gui/Zone_points/A block/Button" to="Gui/Zone_points" method="A_block"]
