@@ -632,7 +632,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Tap" type="Sprite2D" parent="Gui/Tutorial/earning"]
-position = Vector2(402, 537)
+position = Vector2(401, 537)
 rotation = -0.53411
 scale = Vector2(0.3725, 0.3725)
 texture = ExtResource("9_687qm")
@@ -644,7 +644,8 @@ offset_top = 633.0
 offset_right = 447.0
 offset_bottom = 656.0
 scale = Vector2(1.86748, 1.86748)
-text = "Tap to earn points."
+text = "Earn        more!"
+horizontal_alignment = 1
 
 [node name="Icon" type="Sprite2D" parent="Gui/Tutorial/earning"]
 modulate = Color(0, 0, 0, 1)
@@ -652,6 +653,16 @@ z_index = -1
 position = Vector2(434, 656)
 scale = Vector2(2.15922, 0.279995)
 texture = ExtResource("4_712nc")
+
+[node name="counter" type="Label" parent="Gui/Tutorial/earning"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 405.0
+offset_top = 640.0
+offset_right = 445.0
+offset_bottom = 663.0
+scale = Vector2(1.53502, 1.53502)
+text = "(10)"
 
 [node name="Evolution_window" type="Control" parent="Gui"]
 anchors_preset = 0

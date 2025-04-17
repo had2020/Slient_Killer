@@ -10,14 +10,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_fqul6")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 one_shot = true
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rxwae")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -8,12 +8,13 @@ var check_to_evo = 0;
 
 var played_cap = false;
 
-func _process(delta: float) -> void:
-	pass
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Tap"):
 		
+		var tap_effect = preload("res://levels/tap_effect.tscn");
+		var tap_effect_init = tap_effect.instantiate();
+		tap_effect_init.global_position = event.global_position;
+		add_child(tap_effect_init);
 		
 		if Globals.evo_points != 100:
 			Globals.evo_points += 1;
@@ -21,6 +22,7 @@ func _input(event: InputEvent) -> void:
 			$Gui/Evo_points/Counter.text = str(Globals.evo_points);
 			
 		if check_for_evo:
+			$Gui/Tutorial/earning/counter.text = str(int($Gui/Tutorial/earning/counter.text) - 1);
 			if check_to_evo == Globals.evo_points:
 				check_for_evo = false;
 				$Gui/story/Next_Button.visible = true;
