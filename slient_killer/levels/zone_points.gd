@@ -14,6 +14,12 @@ func clear_messages():
 
 func infect(zone: String):
 	$"../../Cough_effect".play(2.3)
+	if Globals.zone_cost > Globals.evo_points:
+		$"../../Sound_effects/alert".play()
+		$"../broke_alert".visible = true;
+		$"../Messages/noson".visible = true;
+		$"../../broke_timer".start()
+	
 	if Globals.zone_cost < Globals.evo_points:
 		Globals.evo_points -= Globals.zone_cost;
 		Globals.infected_zones += 1;

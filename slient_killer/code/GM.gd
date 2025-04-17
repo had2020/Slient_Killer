@@ -92,6 +92,9 @@ func _on_infection_timer_timeout() -> void:
 	var zone_id = randi_range(1, children - 1);
 	zone = $Gui/Zone_points.get_child(zone_id);
 	zone.visible = true;
+	var cost = randi_range(10, 70);
+	Globals.zone_cost = cost
+	zone.get_child(4).text = "Price: " + str(cost) + " Evo"
 
 func _on_timer_to_infect_timeout() -> void:
 	if is_instance_valid(zone):
@@ -120,3 +123,6 @@ func _on_epa_timer_timeout() -> void:
 	$Gui/News/EPA_filters.visible = true;
 	$Sound_effects/News.play()
 	$Gui/News/EPA_filters/Timer.start()
+
+func _on_broke_timer_timeout() -> void:
+	$Gui/broke_alert.visible = false;
