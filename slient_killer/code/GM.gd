@@ -80,6 +80,7 @@ func _on_next_button_button_down() -> void:
 			$Gui/story/Next_Button.visible = false;
 			$Gui/story.visible = false;
 
+# TODO game over
 func _on_infection_timer_timeout() -> void:
 	$Timer_to_infect.start();
 	var children = $Gui/Zone_points.get_child_count();
@@ -88,7 +89,8 @@ func _on_infection_timer_timeout() -> void:
 	zone.visible = true;
 
 func _on_timer_to_infect_timeout() -> void:
-	zone.visible = false;
+	if is_instance_valid(zone):
+		zone.visible = false;
 	$Infection_Timer.wait_time = randi_range(1, 10)
 	$Infection_Timer.start();
 

@@ -5,7 +5,7 @@ extends Control
 var brought = false;
 
 func _ready() -> void:
-	$Button.text = "Buy: " + str(cost) + " points";
+	$price_msg.text = "Buy: " + str(cost) + " points";
 
 func _on_button_button_down() -> void:
 	if not brought:
@@ -13,8 +13,8 @@ func _on_button_button_down() -> void:
 			Globals.evo_points -= cost;
 			$Cing.play();
 			brought = true;
-			$Button.text = "Brought";
-			$Button.set_modulate(Color(1, 255, 1, 1));
+			$price_msg.text = "Brought";
+			$price_msg.set_modulate(Color(1, 255, 1, 255));
 			Globals.sigma = true;
 			self.get_parent().get_parent().visible = false;
 		else:
