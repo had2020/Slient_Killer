@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=26 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -16,6 +16,7 @@
 [ext_resource type="Material" uid="uid://ds8shw5pxy34y" path="res://assets/materials/uninfected.tres" id="11_re8x6"]
 [ext_resource type="AudioStream" uid="uid://cnbqirmy786ye" path="res://assets/Sounds/cough.mp3" id="15_54i5j"]
 [ext_resource type="AudioStream" uid="uid://belt2yh6jvpjh" path="res://assets/Sounds/cinehit.mp3" id="16_wrd2w"]
+[ext_resource type="AudioStream" uid="uid://uhrj4ppq4y4q" path="res://assets/Sounds/submit.mp3" id="17_og45p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w32yo"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -345,7 +346,7 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "generate some Evo Points"
+text = "generate bonus Evo Points"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob6/extra"]
 modulate = Color(0, 0, 0, 1)
@@ -463,7 +464,7 @@ offset_top = 24.0
 offset_right = 559.0
 offset_bottom = 47.0
 scale = Vector2(2.56001, 2.56001)
-text = "000"
+text = "0"
 
 [node name="Name" type="Control" parent="Gui/Evo_points"]
 anchors_preset = 0
@@ -516,11 +517,18 @@ visible = false
 modulate = Color(1, 0, 0, 1)
 layout_mode = 0
 offset_left = 498.0
-offset_top = 206.0
+offset_top = 218.0
 offset_right = 557.0
-offset_bottom = 229.0
+offset_bottom = 241.0
 scale = Vector2(1.89609, 1.89609)
 text = "Capped"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Evo_points/Cap_label"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(30.0619, 12.1302)
+scale = Vector2(0.527401, 0.105479)
+texture = ExtResource("4_712nc")
 
 [node name="News" type="Control" parent="Gui"]
 anchors_preset = 0
@@ -1760,6 +1768,9 @@ volume_db = 2.0
 [node name="alert" type="AudioStreamPlayer" parent="Sound_effects"]
 stream = ExtResource("16_wrd2w")
 
+[node name="submit" type="AudioStreamPlayer" parent="Sound_effects"]
+stream = ExtResource("17_og45p")
+
 [node name="cap_alert" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -1785,3 +1796,4 @@ one_shot = true
 [connection signal="timeout" from="Infection_Timer" to="." method="_on_infection_timer_timeout"]
 [connection signal="timeout" from="Timer_to_infect" to="." method="_on_timer_to_infect_timeout"]
 [connection signal="timeout" from="Zone_refill" to="." method="_on_zone_refill_timeout"]
+[connection signal="timeout" from="cap_alert" to="." method="_on_cap_alert_timeout"]
