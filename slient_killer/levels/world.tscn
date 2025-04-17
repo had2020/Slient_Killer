@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=40 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -27,6 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://b7475f17uhmuw" path="res://assets/pictures/lebron.png" id="19_y3so4"]
 [ext_resource type="Texture2D" uid="uid://com8ypmdi1cxp" path="res://assets/pictures/alpha.png" id="20_1ynat"]
 [ext_resource type="Script" path="res://levels/otherschools.gd" id="21_ch027"]
+[ext_resource type="Texture2D" uid="uid://b0hm5fcr4jd1" path="res://assets/pictures/football.png" id="21_gd4hu"]
+[ext_resource type="Texture2D" uid="uid://ccdhovkc64p4e" path="res://assets/pictures/basketball.png" id="21_kfjr1"]
+[ext_resource type="Texture2D" uid="uid://nfc06vrpj1hh" path="res://assets/pictures/dragon.png" id="21_ox7aa"]
 [ext_resource type="AudioStream" uid="uid://cb5s26pjb0f8o" path="res://assets/Sounds/news.mp3" id="26_rspcm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w32yo"]
@@ -1040,9 +1043,9 @@ stream = ExtResource("8_oxfhy")
 stream = ExtResource("14_yr8u6")
 
 [node name="Virusdish" type="Sprite2D" parent="Gui/Evolution_window/Shop_items2/item3"]
-position = Vector2(62, 70)
-scale = Vector2(0.119996, 0.119996)
-texture = ExtResource("20_1ynat")
+position = Vector2(62, 69.5)
+scale = Vector2(0.240631, 0.258333)
+texture = ExtResource("21_gd4hu")
 
 [node name="error_msg" type="Label" parent="Gui/Evolution_window/Shop_items2/item3"]
 visible = false
@@ -1130,9 +1133,9 @@ stream = ExtResource("8_oxfhy")
 stream = ExtResource("14_yr8u6")
 
 [node name="Virusdish" type="Sprite2D" parent="Gui/Evolution_window/Shop_items2/item4"]
-position = Vector2(62, 70)
-scale = Vector2(0.119996, 0.119996)
-texture = ExtResource("20_1ynat")
+position = Vector2(61.5, 71)
+scale = Vector2(0.22037, 0.25)
+texture = ExtResource("21_kfjr1")
 
 [node name="error_msg" type="Label" parent="Gui/Evolution_window/Shop_items2/item4"]
 visible = false
@@ -1221,8 +1224,8 @@ stream = ExtResource("14_yr8u6")
 
 [node name="Virusdish" type="Sprite2D" parent="Gui/Evolution_window/Shop_items2/item5"]
 position = Vector2(62, 70)
-scale = Vector2(0.119996, 0.119996)
-texture = ExtResource("20_1ynat")
+scale = Vector2(0.171429, 0.192719)
+texture = ExtResource("21_ox7aa")
 
 [node name="error_msg" type="Label" parent="Gui/Evolution_window/Shop_items2/item5"]
 visible = false
@@ -2150,6 +2153,7 @@ offset_bottom = 40.0
 [node name="otherschools" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2189,6 +2193,7 @@ texture = ExtResource("4_712nc")
 [node name="park" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2228,6 +2233,7 @@ texture = ExtResource("4_712nc")
 [node name="friend" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2267,6 +2273,7 @@ texture = ExtResource("4_712nc")
 [node name="Closed" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2304,6 +2311,7 @@ scale = Vector2(0.254044, 0.229275)
 texture = ExtResource("4_712nc")
 
 [node name="extra" type="Label" parent="Gui/Messages/Closed"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -2321,6 +2329,7 @@ texture = ExtResource("4_712nc")
 [node name="alot" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2358,6 +2367,7 @@ scale = Vector2(0.254044, 0.229275)
 texture = ExtResource("4_712nc")
 
 [node name="extra" type="Label" parent="Gui/Messages/alot"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -2373,6 +2383,7 @@ scale = Vector2(2, 0.2)
 texture = ExtResource("4_712nc")
 
 [node name="extra2" type="Label" parent="Gui/Messages/alot"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 40.8333
 offset_right = 256.417
@@ -2390,6 +2401,7 @@ texture = ExtResource("4_712nc")
 [node name="mall" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2427,6 +2439,7 @@ scale = Vector2(0.254044, 0.229275)
 texture = ExtResource("4_712nc")
 
 [node name="extra" type="Label" parent="Gui/Messages/mall"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -2442,6 +2455,7 @@ scale = Vector2(2, 0.2)
 texture = ExtResource("4_712nc")
 
 [node name="extra2" type="Label" parent="Gui/Messages/mall"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 40.8333
 offset_right = 256.417
@@ -2459,6 +2473,7 @@ texture = ExtResource("4_712nc")
 [node name="hotel" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2496,6 +2511,7 @@ scale = Vector2(0.254044, 0.229275)
 texture = ExtResource("4_712nc")
 
 [node name="extra" type="Label" parent="Gui/Messages/hotel"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -2513,6 +2529,7 @@ texture = ExtResource("4_712nc")
 [node name="A_block" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2550,6 +2567,7 @@ scale = Vector2(0.254044, 0.229275)
 texture = ExtResource("4_712nc")
 
 [node name="extra" type="Label" parent="Gui/Messages/A_block"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -2567,6 +2585,7 @@ texture = ExtResource("4_712nc")
 [node name="D_block" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2604,6 +2623,7 @@ scale = Vector2(0.254044, 0.229275)
 texture = ExtResource("4_712nc")
 
 [node name="extra" type="Label" parent="Gui/Messages/D_block"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -2621,6 +2641,7 @@ texture = ExtResource("4_712nc")
 [node name="F_block" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
@@ -2658,6 +2679,7 @@ scale = Vector2(0.254044, 0.229275)
 texture = ExtResource("4_712nc")
 
 [node name="extra" type="Label" parent="Gui/Messages/F_block"]
+layout_mode = 0
 offset_left = 0.416667
 offset_top = 19.5834
 offset_right = 256.417
@@ -2675,6 +2697,7 @@ texture = ExtResource("4_712nc")
 [node name="noson" type="Label" parent="Gui/Messages"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 18.0
 offset_top = 265.0
 offset_right = 274.0
