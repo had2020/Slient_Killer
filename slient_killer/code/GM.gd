@@ -8,6 +8,10 @@ var check_to_evo = 0;
 
 var played_cap = false;
 
+func clear_messages():
+	for child in $Gui/Messages.get_children():
+		child.visible = false
+
 func _physics_process(delta: float) -> void:
 	if Globals.sigma	:
 		$Gui/story/Next_Button.visible = true;
@@ -80,7 +84,7 @@ func _on_next_button_button_down() -> void:
 			$Gui/story/Next_Button.visible = false;
 			$Gui/story.visible = false;
 
-# TODO game over
+# TODO game over and clear_messages() beforehand
 func _on_infection_timer_timeout() -> void:
 	$Timer_to_infect.start();
 	var children = $Gui/Zone_points.get_child_count();

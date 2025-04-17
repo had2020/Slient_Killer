@@ -26,6 +26,9 @@ func infect(zone: String):
 				$"../../zones/Madison/MeshInstance3D".material_override = infected_material;
 				$Madison.queue_free()
 			"A_Block":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/A_block".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/A_Block/MeshInstance3D".material_override = infected_material;
 				$"A block".queue_free()
@@ -41,10 +44,16 @@ func infect(zone: String):
 				$"../../zones/C_Block/MeshInstance3D".material_override = infected_material;
 				$"C block".queue_free()
 			"Hotel":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/hotel".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/Hotel/MeshInstance3D".material_override = infected_material;
 				$"Hotel".queue_free()
 			"Mall":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/mall".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/Mall/MeshInstance3D".material_override = infected_material;
 				$"Mall".queue_free()
@@ -56,10 +65,16 @@ func infect(zone: String):
 				$"../../zones/Park/MeshInstance3D".material_override = infected_material;
 				$"Park".queue_free()
 			"D_Block":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/D_block".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/D_Block/MeshInstance3D".material_override = infected_material;
 				$"D block".queue_free()
 			"F_Block":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/F_block".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/F_Block/MeshInstance3D".material_override = infected_material;
 				$"F Block".queue_free()
@@ -68,6 +83,9 @@ func infect(zone: String):
 				$"../../zones/E_Block/MeshInstance3D".material_override = infected_material;
 				$"E block".queue_free()
 			"G_Block":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/alot".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/G_Block/MeshInstance3D".material_override = infected_material;
 				$"G block".queue_free()
