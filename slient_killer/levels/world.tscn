@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=23 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjkyr80xipp6o" path="res://assets/pictures/profile.png" id="5_712nc"]
 [ext_resource type="Texture2D" uid="uid://cxxt02snhlfqg" path="res://assets/pictures/DNA.png" id="7_vons5"]
 [ext_resource type="Texture2D" uid="uid://cpfekt6uky80u" path="res://assets/pictures/News/filters.png" id="8_legw5"]
+[ext_resource type="AudioStream" uid="uid://rauu5jakbphf" path="res://assets/Sounds/cing_sound.mp3" id="8_oxfhy"]
 [ext_resource type="Script" path="res://levels/flash.gd" id="8_wqmfy"]
 [ext_resource type="Texture2D" uid="uid://cpvm2uie7rjwi" path="res://assets/pictures/tap.svg" id="9_687qm"]
 [ext_resource type="Texture2D" uid="uid://c88aqvep6bhev" path="res://assets/pictures/reddot.png" id="10_lmpr0"]
@@ -462,7 +463,12 @@ offset_bottom = 47.0
 scale = Vector2(2.56001, 2.56001)
 text = "000"
 
-[node name="label" type="Label" parent="Gui/Evo_points"]
+[node name="Name" type="Control" parent="Gui/Evo_points"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="label" type="Label" parent="Gui/Evo_points/Name"]
 z_index = 1
 layout_mode = 0
 offset_left = 498.0
@@ -472,7 +478,7 @@ offset_bottom = 176.0
 scale = Vector2(2.56001, 2.56001)
 text = "Points"
 
-[node name="label2" type="Label" parent="Gui/Evo_points"]
+[node name="label2" type="Label" parent="Gui/Evo_points/Name"]
 z_index = 1
 layout_mode = 0
 offset_left = 497.0
@@ -481,6 +487,22 @@ offset_right = 546.0
 offset_bottom = 135.0
 scale = Vector2(2.56001, 2.56001)
 text = "Evo"
+
+[node name="Bonus" type="Label" parent="Gui/Evo_points"]
+modulate = Color(0, 1, 0, 1)
+z_index = 1
+texture_filter = 1
+layout_mode = 0
+offset_left = 484.0
+offset_top = 67.0
+offset_right = 542.0
+offset_bottom = 90.0
+scale = Vector2(2.12002, 2.12002)
+text = "+Bonus"
+
+[node name="Cing_sound" type="AudioStreamPlayer" parent="Gui/Evo_points"]
+stream = ExtResource("8_oxfhy")
+volume_db = 3.0
 
 [node name="News" type="Control" parent="Gui"]
 anchors_preset = 0
@@ -1710,6 +1732,8 @@ one_shot = true
 [node name="Zone_refill" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="Cough_effect" type="AudioStreamPlayer" parent="."]
 
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
 [connection signal="button_down" from="Gui/story/Next_Button" to="." method="_on_next_button_button_down"]
