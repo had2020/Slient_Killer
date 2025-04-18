@@ -2765,6 +2765,7 @@ position = Vector2(9.99304, -128.716)
 texture = ExtResource("12_yfe8t")
 
 [node name="Panel" type="Panel" parent="Gui"]
+visible = false
 layout_mode = 0
 offset_left = 162.0
 offset_top = 350.0
@@ -2772,6 +2773,11 @@ offset_right = 360.0
 offset_bottom = 532.0
 scale = Vector2(1.50357, 1.50357)
 script = ExtResource("27_ap2km")
+
+[node name="QR_Code_share" type="Control" parent="Gui"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="zones" type="Node3D" parent="."]
 
@@ -2928,7 +2934,7 @@ text = "Highway"
 
 [node name="Label3D7" type="Label3D" parent="Zone_names"]
 transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -28.0237, 2.43245, -38.0266)
-text = "B Block"
+text = "T Block"
 
 [node name="Label3D8" type="Label3D" parent="Zone_names"]
 transform = Transform3D(20, 0, 0, 0, -8.74229e-07, 20, 0, -20, -8.74229e-07, -2.99404, 2.43245, -39.1557)
@@ -2996,6 +3002,9 @@ one_shot = true
 [node name="broke_timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Dot_timer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="finished" from="Music" to="Music" method="_on_finished"]
 [connection signal="button_down" from="Gui/Evo_button/Evo_Button" to="Gui/Evo_button" method="_on_evo_button_button_down"]
