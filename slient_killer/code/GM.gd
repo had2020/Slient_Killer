@@ -89,7 +89,7 @@ func _on_next_button_button_down() -> void:
 func _on_infection_timer_timeout() -> void:
 	var children = $Gui/Zone_points.get_child_count();
 	# End game
-	if children < 1:
+	if children > 1:
 		$Gui/QR_Code_share.visible = true
 		Engine.time_scale = 0.0
 	else:
