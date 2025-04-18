@@ -3,6 +3,8 @@
 
 A Godot/Redot HTML Game
 
+This is short 3-day project for a competion. Feel free to read through if that's your thing. It's just about the assigment.
+
 ## Our Vision
 
 We want to open people’s eyes to an invisible threat—how environmental hazards are silently cutting our lives short, just like the black lung epidemic among coal miners. Our game sheds light on the dangers of **particulate matter**, **water pollution**, and the **recycling of contaminated crop water**. These issues often go unnoticed, but they’re affecting our health and longevity every day.
