@@ -1,5 +1,8 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://ds8shw5pxy34y"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ds8shw5pxy34y"]
+
+[ext_resource type="Texture2D" uid="uid://cbskoc2lynfm5" path="res://assets/pictures/boarders.png" id="1_n03fl"]
 
 [resource]
 transparency = 1
 albedo_color = Color(0.0784314, 0.0784314, 0.0784314, 0.654902)
+albedo_texture = ExtResource("1_n03fl")

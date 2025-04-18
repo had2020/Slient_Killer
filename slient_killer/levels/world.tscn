@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=45 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://nfc06vrpj1hh" path="res://assets/pictures/dragon.png" id="21_ox7aa"]
 [ext_resource type="AudioStream" uid="uid://cb5s26pjb0f8o" path="res://assets/Sounds/news.mp3" id="26_rspcm"]
 [ext_resource type="Script" path="res://code/testing.gd" id="27_ap2km"]
+[ext_resource type="Texture2D" uid="uid://cm1pee4socjnc" path="res://assets/pictures/steve1.png" id="27_ijv2y"]
 [ext_resource type="Script" path="res://code/qr_code_share.gd" id="28_6i82f"]
 [ext_resource type="Texture2D" uid="uid://csymf1mbgvw1c" path="res://assets/pictures/Slient_killer.png" id="28_m307e"]
 [ext_resource type="Script" path="res://code/q_rcode.gd" id="29_f1euq"]
@@ -101,7 +102,6 @@ script = ExtResource("2_tsgde")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_w32yo")
-autoplay = true
 script = SubResource("GDScript_w32yo")
 
 [node name="scene_bounds" type="Node3D" parent="."]
@@ -183,7 +183,7 @@ offset_top = 265.0
 offset_right = 274.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "Together were going spread a "
+text = "Together we're going to spread a "
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob2"]
 modulate = Color(0, 0, 0, 1)
@@ -313,7 +313,7 @@ offset_top = 262.0
 offset_right = 277.0
 offset_bottom = 285.0
 scale = Vector2(2.4, 2.4)
-text = "Good job, my goon, your learning"
+text = "Good job, young gooner, your"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob5"]
 modulate = Color(0, 0, 0, 1)
@@ -334,7 +334,7 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "quite fast! "
+text = "learning quite fast"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob5/extra"]
 modulate = Color(0, 0, 0, 1)
@@ -389,7 +389,7 @@ offset_top = 262.0
 offset_right = 277.0
 offset_bottom = 285.0
 scale = Vector2(2.4, 2.4)
-text = "Let's evolve our strain, click"
+text = "Let's evolve our virus, click"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob7"]
 modulate = Color(0, 0, 0, 1)
@@ -427,7 +427,8 @@ offset_top = 262.0
 offset_right = 277.0
 offset_bottom = 285.0
 scale = Vector2(2.4, 2.4)
-text = "Now, takeover the world!"
+text = "Now spread your seed!
+"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/story/textblob8"]
 modulate = Color(0, 0, 0, 1)
@@ -442,6 +443,7 @@ scale = Vector2(0.300003, 0.300003)
 texture = ExtResource("5_712nc")
 
 [node name="Next_Button" type="Button" parent="Gui/story"]
+modulate = Color(0, 1, 0, 1)
 layout_mode = 0
 offset_left = 256.0
 offset_top = 740.0
@@ -828,11 +830,11 @@ cost = 50
 
 [node name="Name" type="Label" parent="Gui/Evolution_window/Shop_items2/item"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 2.0
-offset_right = 117.0
-offset_bottom = 25.0
-text = "Lebron Pookie"
+offset_left = 1.0
+offset_right = 135.0
+offset_bottom = 23.0
+scale = Vector2(0.96, 0.96)
+text = "LePookie James"
 
 [node name="Backdrop" type="Sprite2D" parent="Gui/Evolution_window/Shop_items2/item"]
 modulate = Color(0.114897, 0.114897, 0.114897, 1)
@@ -2169,7 +2171,7 @@ offset_top = 265.0
 offset_right = 274.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "Bro, think of the kids!"
+text = "Oh no bro, think of the children!"
 script = ExtResource("21_ch027")
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/otherschools"]
@@ -2209,7 +2211,7 @@ offset_top = 265.0
 offset_right = 274.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "Dam, even Football is cancelled!"
+text = "Covid closed the park too!"
 script = ExtResource("21_ch027")
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/park"]
@@ -2289,7 +2291,7 @@ offset_top = 265.0
 offset_right = 274.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "Oh no bro, San Diego just issued"
+text = "Oh no bro, Trump closed"
 script = ExtResource("21_ch027")
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/Closed"]
@@ -2327,7 +2329,7 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "a lockdown, cus of you!"
+text = "the boarder!"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/Closed/extra"]
 modulate = Color(0, 0, 0, 1)
@@ -2345,7 +2347,7 @@ offset_top = 265.0
 offset_right = 274.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "Oh, yes my goon! That was alot"
+text = "Oh yes, fellow gooner. We've"
 script = ExtResource("21_ch027")
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/alot"]
@@ -2383,7 +2385,7 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "of people to infect. "
+text = "infected all of G block, my"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/alot/extra"]
 modulate = Color(0, 0, 0, 1)
@@ -2399,7 +2401,7 @@ offset_top = 40.8333
 offset_right = 256.417
 offset_bottom = 63.8333
 scale = Vector2(0.999995, 0.999995)
-text = "My Plan will be ready soon hehe."
+text = "masterplan is almost complete!"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/alot/extra2"]
 modulate = Color(0, 0, 0, 1)
@@ -2417,7 +2419,7 @@ offset_top = 265.0
 offset_right = 274.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "Do you mind if you, wait for me"
+text = "Do you mind if I grab an"
 script = ExtResource("21_ch027")
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/mall"]
@@ -2455,25 +2457,9 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "to get a extra long meat ball "
+text = "extra long, meaty sub?"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/mall/extra"]
-modulate = Color(0, 0, 0, 1)
-z_index = -1
-position = Vector2(129, 12.5)
-scale = Vector2(2, 0.2)
-texture = ExtResource("4_712nc")
-
-[node name="extra2" type="Label" parent="Gui/Messages/mall"]
-layout_mode = 0
-offset_left = 0.416667
-offset_top = 40.8333
-offset_right = 256.417
-offset_bottom = 63.8333
-scale = Vector2(0.999995, 0.999995)
-text = "subway first!"
-
-[node name="backdrop" type="Sprite2D" parent="Gui/Messages/mall/extra2"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(129, 12.5)
@@ -2489,7 +2475,7 @@ offset_top = 265.0
 offset_right = 274.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "The snacks were to expensive"
+text = "The snacks were too expensive"
 script = ExtResource("21_ch027")
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/hotel"]
@@ -2545,7 +2531,7 @@ offset_top = 265.0
 offset_right = 274.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "Aww man, that block was low key"
+text = "My grandpa said, \"I texted my"
 script = ExtResource("21_ch027")
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/A_block"]
@@ -2579,11 +2565,11 @@ texture = ExtResource("4_712nc")
 [node name="extra" type="Label" parent="Gui/Messages/A_block"]
 layout_mode = 0
 offset_left = 0.416667
-offset_top = 19.5834
+offset_top = 20.0
 offset_right = 256.417
-offset_bottom = 42.5834
+offset_bottom = 43.0
 scale = Vector2(0.999995, 0.999995)
-text = "kind of fire, not goin lie."
+text = "age, autocorrect said 'prehistoric.\""
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/A_block/extra"]
 modulate = Color(0, 0, 0, 1)
@@ -2652,25 +2638,25 @@ texture = ExtResource("4_712nc")
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 18.0
+offset_left = 2.0
 offset_top = 265.0
-offset_right = 274.0
+offset_right = 271.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "These guys probably say, their"
+text = "I am placing blocks and shee cause"
 script = ExtResource("21_ch027")
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/F_block"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(129, 12.5)
-scale = Vector2(2, 0.2)
+scale = Vector2(2.21667, 0.2)
 texture = ExtResource("4_712nc")
 
 [node name="profile" type="Sprite2D" parent="Gui/Messages/F_block"]
-position = Vector2(133.5, -47)
-scale = Vector2(0.300003, 0.300003)
-texture = ExtResource("5_712nc")
+position = Vector2(133.333, -47.0833)
+scale = Vector2(0.146667, 0.146667)
+texture = ExtResource("27_ijv2y")
 
 [node name="Button" type="Button" parent="Gui/Messages/F_block"]
 layout_mode = 0
@@ -2695,13 +2681,13 @@ offset_top = 19.5834
 offset_right = 256.417
 offset_bottom = 42.5834
 scale = Vector2(0.999995, 0.999995)
-text = "so far way from target."
+text = " I'm in frickin minecraft"
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/F_block/extra"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(129, 12.5)
-scale = Vector2(2, 0.2)
+scale = Vector2(2.33333, 0.2)
 texture = ExtResource("4_712nc")
 
 [node name="noson" type="Label" parent="Gui/Messages"]
@@ -2713,13 +2699,21 @@ offset_top = 265.0
 offset_right = 274.0
 offset_bottom = 288.0
 scale = Vector2(2.4, 2.4)
-text = "You're no son of mine!"
+text = "Oh no brokie, your not crushing 
+enough loaf."
 script = ExtResource("21_ch027")
 
 [node name="backdrop" type="Sprite2D" parent="Gui/Messages/noson"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
 position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="backdrop2" type="Sprite2D" parent="Gui/Messages/noson"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129.167, 36.6667)
 scale = Vector2(2, 0.2)
 texture = ExtResource("4_712nc")
 
@@ -2743,6 +2737,47 @@ z_index = -1
 position = Vector2(15, 16.6667)
 scale = Vector2(0.254044, 0.229275)
 texture = ExtResource("4_712nc")
+
+[node name="E_Block" type="Label" parent="Gui/Messages"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 265.0
+offset_right = 274.0
+offset_bottom = 288.0
+scale = Vector2(2.4, 2.4)
+text = "It's the villagers!"
+horizontal_alignment = 1
+script = ExtResource("21_ch027")
+
+[node name="backdrop" type="Sprite2D" parent="Gui/Messages/E_Block"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(129, 12.5)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_712nc")
+
+[node name="Button" type="Button" parent="Gui/Messages/E_Block"]
+layout_mode = 0
+offset_left = 109.167
+offset_top = 222.083
+offset_right = 139.167
+offset_bottom = 253.083
+scale = Vector2(1.38333, 1.38333)
+text = "Ok"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/Messages/E_Block/Button"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(15, 16.6667)
+scale = Vector2(0.254044, 0.229275)
+texture = ExtResource("4_712nc")
+
+[node name="profile" type="Sprite2D" parent="Gui/Messages/E_Block"]
+position = Vector2(133.333, -47.0833)
+scale = Vector2(0.146667, 0.146667)
+texture = ExtResource("27_ijv2y")
 
 [node name="broke_alert" type="Label" parent="Gui"]
 visible = false
@@ -2778,6 +2813,7 @@ scale = Vector2(1.50357, 1.50357)
 script = ExtResource("27_ap2km")
 
 [node name="QR_Code_share" type="Control" parent="Gui"]
+visible = false
 anchors_preset = 0
 offset_top = -136.0
 offset_right = 40.0
@@ -2829,6 +2865,81 @@ offset_right = 12.0
 offset_bottom = -163.8
 scale = Vector2(1.448, 1.448)
 text = "Close"
+
+[node name="endgame" type="Control" parent="Gui"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/endgame"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(319, 587)
+scale = Vector2(5.16, 5.8)
+texture = ExtResource("4_712nc")
+
+[node name="heading" type="Label" parent="Gui/endgame"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 278.0
+offset_right = 489.0
+offset_bottom = 327.0
+scale = Vector2(1.32, 1.32)
+text = "Oh no bro, you reached the end. The game is now froozen, and 
+cooked."
+
+[node name="paragraph" type="Label" parent="Gui/endgame"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 407.0
+offset_right = 598.0
+offset_bottom = 638.0
+scale = Vector2(1.04, 1.04)
+text = "Particulate matter is basically tiny junk floating in the air, like dust, soot,
+ or mysterious specks that make you sneeze like my grandad. It comes from 
+stuff like cars, fires, and even your neighbor’s inferior barbeque. 
+Cut the grill old man, you can't make it like me.
+ It's a serious issue that affects your respiratory system. 
+Sorry, Mr. Tate, this one can't be solved by breathing air, 
+because it's in the air, and it's not going away any time soon.
+ I don't want to drop dead from a heart attack,
+ and i don't want to be at your funeral either, Pookie Bear - Damian May"
+
+[node name="Profile" type="Sprite2D" parent="Gui/endgame"]
+position = Vector2(336, 114)
+texture = ExtResource("5_712nc")
+
+[node name="Title" type="Label" parent="Gui/endgame"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 356.0
+offset_right = 383.0
+offset_bottom = 379.0
+scale = Vector2(1.36, 1.36)
+text = "Learn about Particulate matter."
+
+[node name="Credits" type="Label" parent="Gui/endgame"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 670.0
+offset_right = 463.0
+offset_bottom = 823.0
+text = "Credits:
+	Hadrian Lazic - Programmer, Team leader, QR code passer
+Damian May -  Lead Writer, QR code passer
+
+Other mentions 
+Teucer Carrera - Helped me, meet with teachers to setup QR code distribution."
+
+[node name="Thanks" type="Label" parent="Gui/endgame"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 879.0
+offset_right = 520.0
+offset_bottom = 902.0
+scale = Vector2(1.2, 1.2)
+text = "Thank for playing our school project, and competion submission!
+You guys are the best!"
 
 [node name="zones" type="Node3D" parent="."]
 
@@ -3100,6 +3211,7 @@ autostart = true
 [connection signal="button_down" from="Gui/Messages/D_block/Button" to="Gui/Messages/D_block" method="_on_button_button_down"]
 [connection signal="button_down" from="Gui/Messages/F_block/Button" to="Gui/Messages/F_block" method="_on_button_button_down"]
 [connection signal="button_down" from="Gui/Messages/noson/Button" to="Gui/Messages/noson" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/Messages/E_Block/Button" to="Gui/Messages/E_Block" method="_on_button_button_down"]
 [connection signal="button_down" from="Gui/QR_Code_share/Button" to="Gui/QR_Code_share" method="_on_button_button_down"]
 [connection signal="button_down" from="Gui/QRcode/Button" to="Gui/QRcode" method="_on_button_button_down"]
 [connection signal="timeout" from="Infection_Timer" to="." method="_on_infection_timer_timeout"]

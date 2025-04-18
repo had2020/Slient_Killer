@@ -85,6 +85,9 @@ func infect(zone: String):
 				$"../../zones/F_Block/MeshInstance3D".material_override = infected_material;
 				$"F Block".queue_free()
 			"E_Block":
+				clear_messages()
+				$"../../Sound_effects/News".play()
+				$"../Messages/E_Block".visible = true
 				var infected_material = preload("res://assets/materials/infected.tres");
 				$"../../zones/E_Block/MeshInstance3D".material_override = infected_material;
 				$"E block".queue_free()
