@@ -87,14 +87,19 @@ func _on_next_button_button_down() -> void:
 
 # TODO game over and clear_messages() beforehand, transfer user to gameover scene 
 func _on_infection_timer_timeout() -> void:
-	$Timer_to_infect.start();
 	var children = $Gui/Zone_points.get_child_count();
-	var zone_id = randi_range(1, children - 1);
-	zone = $Gui/Zone_points.get_child(zone_id);
-	zone.visible = true;
-	var cost = randi_range(10, 70);
-	Globals.zone_cost = cost
-	zone.get_child(4).text = "Price: " + str(cost) + " Evo"
+	# End game
+	if children < 1:
+		$Gui/QR_Code_share.visible = true
+		Engine.time_scale = 0.0
+	else:
+		$Timer_to_infect.start();
+		var zone_id = randi_range(1, children - 1);
+		zone = $Gui/Zone_points.get_child(zone_id);
+		zone.visible = true;
+		var cost = randi_range(10, 70);
+		Globals.zone_cost = cost
+		zone.get_child(4).text = "Price: " + str(cost) + " Evo"
 
 func _on_timer_to_infect_timeout() -> void:
 	if is_instance_valid(zone):

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxr7vl6bdujwu"]
+
+[ext_resource type="Texture2D" uid="uid://vi4vamq084b3" path="res://assets/pictures/red_dot 2.png" id="1_0ryy7"]
+
+[node name="Infected_dot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RedDot2" type="Sprite2D" parent="."]
+scale = Vector2(-0.005, -0.005)
+texture = ExtResource("1_0ryy7")
