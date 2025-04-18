@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dtc4qcrps0p1p"]
+[gd_scene load_steps=44 format=3 uid="uid://dtc4qcrps0p1p"]
 
 [ext_resource type="Texture2D" uid="uid://bslw03vjiwfdj" path="res://assets/pictures/community.png" id="1_712nc"]
 [ext_resource type="Script" path="res://code/GM.gd" id="1_i8ckm"]
@@ -32,6 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://nfc06vrpj1hh" path="res://assets/pictures/dragon.png" id="21_ox7aa"]
 [ext_resource type="AudioStream" uid="uid://cb5s26pjb0f8o" path="res://assets/Sounds/news.mp3" id="26_rspcm"]
 [ext_resource type="Script" path="res://code/testing.gd" id="27_ap2km"]
+[ext_resource type="Script" path="res://code/qr_code_share.gd" id="28_6i82f"]
+[ext_resource type="Texture2D" uid="uid://csymf1mbgvw1c" path="res://assets/pictures/Slient_killer.png" id="28_m307e"]
+[ext_resource type="Script" path="res://code/q_rcode.gd" id="29_f1euq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w32yo"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -2780,23 +2783,52 @@ offset_top = -136.0
 offset_right = 40.0
 offset_bottom = -96.0
 scale = Vector2(1.12, 1.12)
+script = ExtResource("28_6i82f")
 
 [node name="Label" type="Label" parent="Gui/QR_Code_share"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1119.0
-offset_right = 207.0
-offset_bottom = 1168.0
+offset_left = 2.67857
+offset_top = 1080.36
+offset_right = 208.679
+offset_bottom = 1181.36
 scale = Vector2(0.64, 0.64)
 text = "I’d love it if you tap to
-share this via QR or Link!"
+share this via QR or Link,
+as it took some effort to 
+make this. Thank You!"
+horizontal_alignment = 1
 
 [node name="Backdrop" type="Sprite2D" parent="Gui/QR_Code_share"]
 modulate = Color(0, 0, 0, 1)
 z_index = -1
-position = Vector2(63, 1135)
-scale = Vector2(1.12001, 0.25373)
+position = Vector2(66.9643, 1094.64)
+scale = Vector2(1.12001, 0.932336)
 texture = ExtResource("4_712nc")
+
+[node name="Button" type="Button" parent="Gui/QR_Code_share"]
+modulate = Color(0.0941176, 1, 0, 1)
+layout_mode = 0
+offset_left = 24.1071
+offset_top = 1040.18
+offset_right = 106.107
+offset_bottom = 1071.18
+text = "Show, QR"
+
+[node name="QRcode" type="Sprite2D" parent="Gui"]
+visible = false
+position = Vector2(325, 620)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("28_m307e")
+script = ExtResource("29_f1euq")
+
+[node name="Button" type="Button" parent="Gui/QRcode"]
+modulate = Color(1, 0, 0, 1)
+offset_left = -38.0
+offset_top = -194.8
+offset_right = 12.0
+offset_bottom = -163.8
+scale = Vector2(1.448, 1.448)
+text = "Close"
 
 [node name="zones" type="Node3D" parent="."]
 
@@ -3068,6 +3100,8 @@ autostart = true
 [connection signal="button_down" from="Gui/Messages/D_block/Button" to="Gui/Messages/D_block" method="_on_button_button_down"]
 [connection signal="button_down" from="Gui/Messages/F_block/Button" to="Gui/Messages/F_block" method="_on_button_button_down"]
 [connection signal="button_down" from="Gui/Messages/noson/Button" to="Gui/Messages/noson" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/QR_Code_share/Button" to="Gui/QR_Code_share" method="_on_button_button_down"]
+[connection signal="button_down" from="Gui/QRcode/Button" to="Gui/QRcode" method="_on_button_button_down"]
 [connection signal="timeout" from="Infection_Timer" to="." method="_on_infection_timer_timeout"]
 [connection signal="timeout" from="Timer_to_infect" to="." method="_on_timer_to_infect_timeout"]
 [connection signal="timeout" from="Zone_refill" to="." method="_on_zone_refill_timeout"]
