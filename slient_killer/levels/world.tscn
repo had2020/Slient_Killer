@@ -2776,8 +2776,27 @@ script = ExtResource("27_ap2km")
 
 [node name="QR_Code_share" type="Control" parent="Gui"]
 anchors_preset = 0
+offset_top = -136.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = -96.0
+scale = Vector2(1.12, 1.12)
+
+[node name="Label" type="Label" parent="Gui/QR_Code_share"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1119.0
+offset_right = 207.0
+offset_bottom = 1168.0
+scale = Vector2(0.64, 0.64)
+text = "I’d love it if you tap to
+share this via QR or Link!"
+
+[node name="Backdrop" type="Sprite2D" parent="Gui/QR_Code_share"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(63, 1135)
+scale = Vector2(1.12001, 0.25373)
+texture = ExtResource("4_712nc")
 
 [node name="zones" type="Node3D" parent="."]
 
