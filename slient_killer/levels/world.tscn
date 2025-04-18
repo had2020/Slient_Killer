@@ -102,6 +102,7 @@ script = ExtResource("2_tsgde")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_w32yo")
+autoplay = true
 script = SubResource("GDScript_w32yo")
 
 [node name="scene_bounds" type="Node3D" parent="."]
