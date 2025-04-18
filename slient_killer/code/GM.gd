@@ -110,7 +110,7 @@ func _on_timer_to_infect_timeout() -> void:
 func _on_zone_refill_timeout() -> void:
 	if Globals.evo_points < 100:
 		Globals.evo_points += (1 * Globals.infected_zones);
-		if Globals.infected_zones > 0:
+		if Globals.infected_zones > 14:
 			$Gui/Evo_points/ProgressBar.value = Globals.evo_points;
 			$Gui/Evo_points/Counter.text = str(Globals.evo_points);
 			$Gui/Evo_points/Bonus.visible = true;
