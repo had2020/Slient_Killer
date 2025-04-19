@@ -98,7 +98,7 @@ func _on_infection_timer_timeout() -> void:
 		var zone_id = randi_range(1, children - 1);
 		zone = $Gui/Zone_points.get_child(zone_id);
 		zone.visible = true;
-		var cost = randi_range(1, 2);
+		var cost = randi_range(10, 100);
 		Globals.zone_cost = cost
 		zone.get_child(4).text = "Price: " + str(cost) + " Evo"
 	if children == 1:
