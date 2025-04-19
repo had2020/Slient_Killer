@@ -97,7 +97,7 @@ body {
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":7158400,"index.wasm":43070364},"focusCanvas":true,"gdextensionLibs":[]};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":7158368,"index.wasm":43062077},"focusCanvas":true,"gdextensionLibs":[]};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
@@ -166,10 +166,11 @@ const engine = new Engine(GODOT_CONFIG);
 				new Promise((resolve) => {
 					setTimeout(() => resolve(), 2000);
 				}),
-			]).catch((err) => {
-				console.error('Error while registering service worker:', err);
-			}).then(() => {
+			]).then(() => {
+				// Reload if there was no error.
 				window.location.reload();
+			}).catch((err) => {
+				console.error('Error while registering service worker:', err);
 			});
 		} else {
 			// Display the message as usual
