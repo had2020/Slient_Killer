@@ -2814,7 +2814,6 @@ scale = Vector2(1.50357, 1.50357)
 script = ExtResource("27_ap2km")
 
 [node name="QR_Code_share" type="Control" parent="Gui"]
-visible = false
 anchors_preset = 0
 offset_top = -136.0
 offset_right = 40.0
@@ -2928,9 +2927,7 @@ offset_bottom = 823.0
 text = "Credits:
 	Hadrian Lazic - Programmer, Team leader, QR code passer
 Damian May -  Lead Writer, QR code passer
-
-Other mentions 
-Teucer Carrera - Helped me, meet with teachers to setup QR code distribution."
+"
 
 [node name="Thanks" type="Label" parent="Gui/endgame"]
 layout_mode = 0

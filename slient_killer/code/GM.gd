@@ -89,17 +89,22 @@ func _on_next_button_button_down() -> void:
 func _on_infection_timer_timeout() -> void:
 	var children = $Gui/Zone_points.get_child_count();
 	# End game
-	if children > 1:
+	if children == 0:
 		$Gui/QR_Code_share.visible = true
+		$Gui/endgame.visible = true
 		Engine.time_scale = 0.0
-	else:
+	if children > 1:
 		$Timer_to_infect.start();
 		var zone_id = randi_range(1, children - 1);
 		zone = $Gui/Zone_points.get_child(zone_id);
 		zone.visible = true;
-		var cost = randi_range(10, 70);
+		var cost = randi_range(1, 2);
 		Globals.zone_cost = cost
 		zone.get_child(4).text = "Price: " + str(cost) + " Evo"
+	if children == 1:
+		$Gui/QR_Code_share.visible = true
+		$Gui/endgame.visible = true
+		Engine.time_scale = 0.0
 
 func _on_timer_to_infect_timeout() -> void:
 	if is_instance_valid(zone):
@@ -110,12 +115,11 @@ func _on_timer_to_infect_timeout() -> void:
 func _on_zone_refill_timeout() -> void:
 	if Globals.evo_points < 100:
 		Globals.evo_points += (1 * Globals.infected_zones);
-		if Globals.infected_zones > 14:
-			$Gui/Evo_points/ProgressBar.value = Globals.evo_points;
-			$Gui/Evo_points/Counter.text = str(Globals.evo_points);
-			$Gui/Evo_points/Bonus.visible = true;
-			$Gui/Evo_points/Bonus/Timer.start();
-			$Gui/Evo_points/Cing_sound.play();
+		$Gui/Evo_points/ProgressBar.value = Globals.evo_points;
+		$Gui/Evo_points/Counter.text = str(Globals.evo_points);
+		$Gui/Evo_points/Bonus.visible = true;
+		$Gui/Evo_points/Bonus/Timer.start();
+		$Gui/Evo_points/Cing_sound.play();
 
 func _on_timer_timeout_bonus() -> void:
 	$Gui/Evo_points/Bonus.visible = false;
