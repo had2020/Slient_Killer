@@ -4,6 +4,7 @@
 A Godot/Redot HTML Game
 
 This is short for a school competion. Feel free to read through if that's your thing. It's just about the assigment.
+It's also live on Itch https://had2023.itch.io/slient-killer, not just Github pages
 
 ## Our Vision
 
