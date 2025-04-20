@@ -3,8 +3,7 @@
 
 A Godot/Redot HTML Game
 
-This is short 3-day project for a competion. Feel free to read through if that's your thing. It's just about the assigment.
-I will release the application metrics in more info, in the future, as I am activily deploying this project across my school with my team, that I am leading.
+This is short for a school competion. Feel free to read through if that's your thing. It's just about the assigment.
 
 ## Our Vision
 
